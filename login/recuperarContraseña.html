@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Kindlent</title>
+    <link rel="icon" href="assets/icono.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+</head>
+
+<body id="body">
+    <header class="header" id="home">
+        <div class="header-logo">
+            <a href="recuperarContraseña.html"><img src="assets/logo.svg" alt=""></a>
+        </div>
+    </header>
+
+    <!--SECCION DE RECUPERAR CONTRASEÑA-->
+    <section class="recuperar-seccion" id="seccion-recuperar">
+        <article class="recuperar-contenido">
+                <h3 class="recuperar-izq-titulo">Restablecer la Contraseña</h3>
+                <form id="form-recuperar" class="recuperar-primer-form">
+                        <div class="recuperar-form-input">
+                            <label for="usuario-reg">Nombre de Usuario</label>
+                            <input type="text" name="usuario-recu" id="usuario-recu" required minlength="5" maxlength="40" pattern="[A-Za-z0-9]+" >
+                        </div>
+                        <div class="recuperar-form-input">
+                            <label for="contraseña-reg">Email</label>
+                            <input type="password" name="email-recu" id="email-recu" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
+                        </div>
+                    <div class="recuperar-form-button" >
+                        <button id="recuperar-boton">Atras</button>
+                    </div>
+                    <div class="recuperar-form-button" >
+                        <button id="recuperar-boton">Siguiente</button>
+                    </div>
+                </form>
+
+                <form id="form-recuperar" class="recuperar-segundo-form none">
+                    <div>
+                        <div class="recuperar-form-input">
+                            <label for="usuario-reg">Nombre de Usuario</label>
+                            <input type="text" name="usuario-reg" id="usuario-reg" required minlength="5" maxlength="40" pattern="[A-Za-z0-9]+" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40">
+                        </div>
+                        <div class="recuperar-form-input">
+                            <label for="contraseña-reg">Contraseña</label>
+                            <input type="password" name="contraseña-reg" id="contraseña-reg" required minlength="8" maxlength="32" title="Tamaño mínimo: 8. Tamaño máximo: 32">
+                        </div>
+                    </div>
+                    <div class="recuperar-form-button" >
+                        <button id="recuperar-boton">Atras</button>
+                    </div>
+                    <div class="recuperar-form-button" >
+                        <button id="recuperar-boton">Siguiente</button>
+                    </div>
+                </form>
+        </article>
+    </section>
+
+    <footer class="footer">
+    </footer>
+
+    <script src="registrarse.js"></script>
+</body>
+
+</html>
