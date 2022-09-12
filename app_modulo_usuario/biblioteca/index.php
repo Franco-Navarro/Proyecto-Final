@@ -1,7 +1,5 @@
 <?php
     include("../scriptsPHP/manejoSesion.inc");
-
-    echo '';
 ?>
 
 <!DOCTYPE html>
@@ -103,26 +101,12 @@
         </nav>
     
         <main class="main">
-            <h1 class="seccion-libro-detalle-titulo">El camino de los reyes</h1>    
-            <section class="seccion-libro-detalle">
-                <article class="libro-detalle">
-                    <div class="libro-detalle-contenedor">
-                        <img class="libro-detalle-imagen" src="../assets/portada-ejemplo.png" alt="portada de ejemplo">
-                        
-                        <div class="libro-detalle-contenido">
-                            <h2 class="libro-detalle-titulo">El camino de los reyes (El archivo de las tormenteas 1)</h2>
-                            <h3 class="libro-detalle-autor">Brandon Sanderson</h3>
-                            <p class="libro-detalle-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
-                                En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
-                                <button class="libro-detalle-leer-boton" id="comenzar-leer">Comenzar a leer <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.0144 20C1.75082 20.0015 1.48953 19.9511 1.24552 19.8517C1.0015 19.7524 0.779561 19.606 0.592421 19.4209C0.404703 19.2352 0.255707 19.0144 0.154029 18.7711C0.0523498 18.5277 0 18.2667 0 18.0031C0 17.7395 0.0523498 17.4785 0.154029 17.2352C0.255707 16.9919 0.404703 16.771 0.592421 16.5854L7.22164 10.0158L0.852783 3.40621C0.479762 3.03208 0.270388 2.52597 0.270388 1.99844C0.270388 1.4709 0.479762 0.964796 0.852783 0.590662C1.03897 0.403502 1.26048 0.254948 1.50454 0.15357C1.74859 0.0521935 2.01037 0 2.27476 0C2.53915 0 2.80093 0.0521935 3.04499 0.15357C3.28904 0.254948 3.51055 0.403502 3.69674 0.590662L11.4275 8.57803C11.7945 8.9513 12 9.45314 12 9.97582C12 10.4985 11.7945 11.0003 11.4275 11.3736L3.41635 19.361C3.23658 19.5545 3.02013 19.7107 2.7795 19.8203C2.53887 19.93 2.27883 19.9911 2.0144 20Z" fill="#1A1A1A"/>
-                                    </svg>
-                                </button>
-                        </div>
-                    </div> 
+            <section class="seccion-biblioteca">
+                <h1 class="seccion-biblioteca-titulo">Tus Favoritos</h1> 
+                <article class="biblioteca-detalle">
+    
                 </article>
             </section>
-            
         </main>
     
         <footer class="footer">
