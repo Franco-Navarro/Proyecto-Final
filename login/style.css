@@ -561,3 +561,76 @@ body.dark .portfolio-modal{
     background-color: var(--background-color-dark);
 }
 
+@media screen and (max-width: 768px) {
+   .login-contenido-izq,
+   .registro-contenido-der {
+      display: none;
+   }
+
+   .login-contenido-der,
+   .registro-contenido-izq,
+   .recuperar-contenido-div {
+      border-radius: 16px;
+      min-height: 500px;
+      max-height: 600px;
+   }
+
+   .tipo-suscripcion-seccion {
+      padding: 1rem;
+   }
+
+   .tipo-suscripcion-contenido {
+      flex-direction: column-reverse;
+   }
+
+   .tipo-suscripcion-gratuita,
+   .tipo-suscripcion-premium {
+      margin: 1rem auto;
+      min-height: 500px;
+      max-height: 600px;
+   }
+
+   .datos-tarjeta-contenido {
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      gap: 2rem;
+   }
+
+   .datos-tarjeta-form {
+      min-height: 500px;
+      max-height: 600px;
+   }
+
+   .datos-tarjeta-tarjeta {
+      display: none;
+   }
+
+}
+
+@media screen and (max-width: 512px) {
+   body {
+      max-height: disable;
+   }
+
+   .tipo-suscripcion-seccion {
+      height: auto;
+      box-sizing: border-box;
+
+   }
+
+   .datos-tarjeta-seccion,
+   .login-seccion,
+   .registro-seccion,
+   .recuperar-seccion  {
+      box-sizing: border-box;
+      padding: 1rem;
+   }
+
+   .tipo-suscripcion-gratuita, 
+   .tipo-suscripcion-premium, 
+   .datos-tarjeta-form  {
+      width: 100%;
+   }
+   
+}

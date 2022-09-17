@@ -1,9 +1,12 @@
 // DESACTIVA LOS CLICKS DERECHOS DENTRO DE LA WEB
-document.oncontextmenu = ()=>{return false}
+//document.oncontextmenu = ()=>{return false}
 
+
+// PARAMETROS PARA CARGAR EL PDF
 url = '../assets/El_camino_de_los_reyes.pdf';
-let pdfCargado = null,
-tipoActual = false;
+let pdfCargado = null, // VARIABLE PARA EL ARCHIVO
+tipoActual = false; // VARIABLE PARA EL TIPO DE LECTURA: false 1 PAGINA; true 2 PAGINA
+// ES UNA MIERDA LO DE true o false YA LO SE LO TENGO QUE CAMBIAR
 
 // CARGA LA PAGINA INDICADA AL CARGAR LA WEB 
 (()=> {
@@ -14,15 +17,28 @@ tipoActual = false;
 // PASA A LA SIGUIENTE PAGINA
 document.getElementById("paginaSiguiente").addEventListener("click", ()=> {
   window.scrollTo(0,0);
-  document.getElementById("paginaActual").value = paginaActual() + 1
-  cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  if(tipoActual === true) {
+    document.getElementById("paginaActual").value = paginaActual() + 2;
+    cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  }
+  else {
+    document.getElementById("paginaActual").value = paginaActual() + 1;
+    cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  }
+  
 })
 
 // VUELVE A LA PAGINA ANTERIOR
 document.getElementById("paginaAnterior").addEventListener("click", ()=> {
   window.scrollTo(0,0);
-  document.getElementById("paginaActual").value = paginaActual() - 1
-  cambiarPagina((paginaActual()), zoomActual(), tipoActual);
+  if(tipoActual === true) {
+    document.getElementById("paginaActual").value = paginaActual() - 2;
+    cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  }
+  else {
+    document.getElementById("paginaActual").value = paginaActual() - 1;
+    cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  }
 })
 
 // CARGA LA PAGINA INDICADA EN EL INPUT NUMBER
@@ -96,3 +112,8 @@ function zoomActual() {
   let zoom = zoomInputActual.replace("%", "");
   return (zoom / 100);
 }
+
+
+// PIDO PERDON SI NO SE ENTIENDE NADA, NO LO ENTIENDO NI YO JAJAJAJA
+// YA VERE DE ARREGARLO UN POCO SI SOBRA TIEMPO
+// LO IMPORTANTE ES QUE FUNCIONA :)

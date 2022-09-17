@@ -195,6 +195,10 @@ input[type=number] {
     background-color: var(--background-color-dark);
  }
 
+ .pdf-canvas{
+    height: 100vh; 
+}
+
  .pdf-contenedor {
     display: flex;
     justify-content: center;
@@ -296,4 +300,26 @@ input[type=number] {
 
  .pdf-controles-zoom button{
     margin: 0 1rem;
+ }
+
+
+ @media screen and (max-width: 768px) {
+    .seccion-pdf {
+        height: 100vh;
+       
+    }
+
+    .pdf-controles-zoom {
+        display: none;
+     }
+
+    .pdf-canvas{
+        width: 100vw;
+        height: auto;  
+    }
+
+    .pdf-contenedor {
+        flex-direction: column;
+        padding-bottom: 3rem;
+     }
  }

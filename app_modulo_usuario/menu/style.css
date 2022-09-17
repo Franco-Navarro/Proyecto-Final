@@ -442,3 +442,122 @@ body.dark .portfolio-modal{
     background-color: var(--background-color-dark);
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+    .main {
+        padding: 4rem 1rem 1rem 4rem;
+    }
+    .seccion-inicio {
+        width: 100%;
+    }
+
+    .tarjeta-libro {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .header {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .header-logo{
+        display: none;
+    }
+
+    .header-buscador{
+        min-width: auto;
+        width: 90%;
+    }
+
+    .navegador {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        top: auto;
+        bottom: 0;
+        height: 44px;
+    }
+
+    .navegador-lista {
+        display: flex;
+        width: auto;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .navegador-boton {
+        display: none;
+    }
+
+    
+    .navegador-lista li,
+    .navegador-salir{
+        width: 44px;
+        height: 44px;
+    }
+
+    .navegador-salir {
+        position: static;
+    }
+
+    .main {
+        padding:0;
+        padding-top: 4rem;
+    }
+
+    .seccion-inicio-titulo{
+        font-size: 28px;
+    }
+
+    .tarjeta-libro{
+        min-width: 280px;
+        opacity: 1;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .tarjeta-libro-portada {
+        width: 130px;
+        margin: auto;
+    }
+
+    .tarjeta-libro-contenedor{
+        flex-direction: column;
+       
+    }
+
+    .tarjeta-libro-contenido{
+        background-color: var(--first-light-color);
+        border-radius: 0 0 8px 8px;
+        position: relative;
+    }
+
+    .tarjeta-libro-contenido::before{
+        background-color: var(--first-light-color);
+        content: " ";
+        position: absolute;
+        border-radius: 8px 8px 0 0;
+        top: -32px;
+        left: 0;
+        width: 100%;
+        height: 32px;
+        z-index: -1000;
+    }
+
+    .footer {
+        margin-bottom: 44px;
+    }
+}
