@@ -10,6 +10,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/base.css">
+        <link rel="stylesheet" type="text/css" href="../styles/componentes.css">
+        <link rel="stylesheet" type="text/css" href="../styles/modoOscuro.css">
         <title>Kindlen`t</title>
         <link rel="icon" href="../assets/icono.svg"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,50 +106,182 @@
         </nav>
         <main class="main">
             <section class="seccion-inicio">
-                <h1 class="seccion-inicio-titulo">Continuar leyendo</h1>
-                <article class="tarjeta-libro" id="tarjeta-libro">
-                    <div class="tarjeta-libro-contenedor">
-                        <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
-                        <div class="tarjeta-libro-contenido">
-                            <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
-                            <small class="tarjeta-libro-autor">Brandon Sanderson</small>
-                            <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
-                                En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
-                        </div>
-                    </div> 
+                <article class="inicio-contenido">
+                    <h1 class="inicio-contenido-titulo">Continuar leyendo</h1>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
                 </article>
-                <article class="tarjeta-libro" id="tarjeta-libro">
-                    <div class="tarjeta-libro-contenedor">
-                        <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
-                        <div class="tarjeta-libro-contenido">
-                            <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
-                            <small class="tarjeta-libro-autor">Brandon Sanderson</small>
-                            <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
-                                En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
-                        </div>
-                    </div> 
+                <article class="inicio-contenido">
+                    <h2 class="inicio-contenido-titulo">Recomendacion por que leiste x</h2>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
                 </article>
-                <article class="tarjeta-libro" id="tarjeta-libro">
-                    <div class="tarjeta-libro-contenedor">
-                        <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
-                        <div class="tarjeta-libro-contenido">
-                            <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
-                            <small class="tarjeta-libro-autor">Brandon Sanderson</small>
-                            <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
-                                En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
-                        </div>
-                    </div> 
+                <article class="inicio-contenido">
+                    <h2 class="inicio-contenido-titulo">Recomendacion por que leiste x</h2>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
                 </article>
-                <article class="tarjeta-libro" id="tarjeta-libro">
-                    <div class="tarjeta-libro-contenedor">
-                        <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
-                        <div class="tarjeta-libro-contenido">
-                            <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
-                            <small class="tarjeta-libro-autor">Brandon Sanderson</small>
-                            <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
-                                En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
-                        </div>
-                    </div> 
+                <article class="inicio-contenido">
+                    <h2 class="inicio-contenido-titulo">Recomendacion por que leiste x</h2>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
+                    <article class="tarjeta-libro" id="tarjeta-libro">
+                        <div class="tarjeta-libro-contenedor">
+                            <img class="tarjeta-libro-portada" src="../assets/portada.png" alt="portada de ejemplo">
+                            <div class="tarjeta-libro-contenido">
+                                <h4 class="tarjeta-libro-titulo">El camino de los reyes</h4>
+                                <small class="tarjeta-libro-autor">Brandon Sanderson</small>
+                                <p class="tarjeta-libro-descripcion">En Roshar, un mundo de piedra y tormentas, extrañas tempestades de increíble potencia barren el rocoso territorio de tal manera que han dado forma a una nueva civilización escondida. Han pasado siglos desde la caída de las diez órdenes consagradas conocidas como los Caballeros Radiantes, pero sus espadas y armaduras aún permanecen.
+                                    En las Llanuras Quebradas se libra una guerra sin sentido. Kaladin ha sido sometido a la esclavitud, mientras diez ejércitos luchan por separado contra un solo enemigo. El comandante de uno de los otros ejércitos, el señor Dalinar, se siente fascinado por un antiguo texto llamado El camino de los reyes. Mientras tanto, al otro lado del océano, su eminente y hereje sobrina, Jasnah Kholin, forma a su discípula, la joven Shallan, quien investigará los secretos de los Caballeros Radiantes y la verdadera causa de la guerra.</p>
+                            </div>
+                        </div> 
+                    </article>
                 </article>
             </section>
         

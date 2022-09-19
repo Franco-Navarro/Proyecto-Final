@@ -9,7 +9,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/base.css">
+        <link rel="stylesheet" type="text/css" href="../styles/componentes.css">
+        <link rel="stylesheet" type="text/css" href="../styles/modoOscuro.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.js" integrity="sha512-JO0HvUFRjsan1fqrOEn9XWzZj/+/0pyXHy6NbBmRocxN9EdUvyvgwwnd23JeQBNetqESMVBDbVHfN5ZveTc0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf_viewer.js" integrity="sha512-er1tUZc+EDdEnVRHGxyRXzmcTi4ctv3pPf1M8WdE98PAcQFxtTfaiWbpNVJYtK0Rs2EWbsqeaKmN3WdAWw0fhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>

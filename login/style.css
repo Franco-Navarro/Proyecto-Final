@@ -634,3 +634,23 @@ body.dark .portfolio-modal{
    }
    
 }
+
+
+.pendientes {
+   position: absolute;
+   top: 6rem;
+   left: 2rem;
+   background-color: #d9a25f45;
+   padding: 2rem;
+   border-radius: 8px;
+}
+
+.pendientes ul {
+   margin: 0;
+   padding: 0;
+}
+
+.pendientes ul > li > ul {
+   margin: 0;
+   padding-left: 1rem;
+}

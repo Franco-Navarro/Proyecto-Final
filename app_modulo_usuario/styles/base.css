@@ -1,0 +1,96 @@
+/* ***** Custom properties ***** */
+:root{
+    --first-light-color: #D9A25F;
+    --first-dark-color: #CC8229;
+    --second-color: #38A68E;
+    --second-dark-color: #137560;
+    --background-color: #F6F6F6;
+    --background-color-dark: rgba(26, 26, 26, 0.8);
+    --background-input: rgba(26, 26, 26, 0.2);
+    --text-color-black: #1A1A1A;
+    --text-color-white: #F6F6F6;
+    --error-color: #CB2B2B;
+    --ok-color: #63DF84;
+    --font: 'Poppins', sans-serif;
+    --max-widht: 1200px;
+    --border-radius: 8px;
+    --box-shadow: 4px 4px 15px rgba(64, 69, 90, 0.25);
+}
+
+/* ***** Reset ***** */
+html{
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-color-black);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a{
+    color: var(--text-color);
+    transition: all 0.5s ease-out;
+}
+
+a:hover{
+    color: var(--second-dark-color);
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h6 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    line-height: 1.6;
+}

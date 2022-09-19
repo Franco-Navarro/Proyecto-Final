@@ -1,0 +1,10 @@
+
+/* ***** Dark theme ***** */
+.dark {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-white);
+}
+
+body.dark .portfolio-modal{
+    background-color: var(--background-color-dark);
+}

@@ -14,6 +14,9 @@ document.getElementById("navegador-boton").addEventListener("click", ()=> {
     $navegador.classList.toggle("navegador-abierto");
 })
 
-document.getElementById("comenzar-leer").addEventListener("click",()=> {
-    window.location = "../lectura_prueba/";
+
+// ESTA FUNCION ES TEMPORAL Y ABRE LA VENTANA DE DESCRIPCION DEL LIBRO
+document.getElementById("tarjeta-libro").addEventListener("click", ()=> {
+    window.location = "../libro_detalle_prueba/";
 })
+

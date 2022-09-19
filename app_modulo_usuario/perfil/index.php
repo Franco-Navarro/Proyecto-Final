@@ -9,6 +9,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/base.css">
+        <link rel="stylesheet" type="text/css" href="../styles/componentes.css">
+        <link rel="stylesheet" type="text/css" href="../styles/modoOscuro.css">
         <title>Kindlen`t</title>
         <link rel="icon" href="../assets/icono.svg"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,7 +108,6 @@
             <section class="seccion-perfil">
                 <h1 class="seccion-perfil-titulo">Bienvenido Pepe</h1> 
                 <article class="perfil-detalle">
-
                 </article>
             </section>
         </main>

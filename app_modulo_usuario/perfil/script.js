@@ -13,7 +13,3 @@ document.getElementById("navegador-boton").addEventListener("click", ()=> {
     const $navegador = document.getElementById("navegador");
     $navegador.classList.toggle("navegador-abierto");
 })
-
-document.getElementById("comenzar-leer").addEventListener("click",()=> {
-    window.location = "../lectura_prueba/";
-})
