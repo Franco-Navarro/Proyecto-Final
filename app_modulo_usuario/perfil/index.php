@@ -105,9 +105,94 @@
         </nav>
     
         <main class="main">
-            <section class="seccion-perfil">
+            <section class="seccion-perfil" id="seccion-perfil">
                 <h1 class="seccion-perfil-titulo">Bienvenido Pepe</h1> 
                 <article class="perfil-detalle">
+                    <div class="perfil-datos">
+                        <h3>Datos del usuario</h3>
+                        <div class="perfil-datos-contenedor">
+                            <div>
+                                <p><b>Usuario</b></p>
+                                <p>Pepe123</p>
+                            </div>
+                            <div>
+                                <p><b>Email</b></p>
+                                <p>Pepe123@gmail.com</p>
+                            </div>
+                            <div>
+                                <p><b>Tarjeta</b></p>
+                                <p>**** **** **** 1305</p>
+                            </div>
+                            <div>
+                                <p><b>Titular tarjeta</b></p>
+                                <p>Pepe Gutierrez</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="perfil-suscripcion">
+                        <h3>Nivel de suscripcion</h3>
+                        <div class="perfil-suscripcion-contenedor">
+                            <div>
+                                <h4>Premium</h4>
+                                <h4>Vence el 25/08/2022</h4>
+                            </div>
+                            <a href="">Cambiar nivel de Suscripcion</a>
+                            <a href="">Cancelar Suscripcion</a>
+                        </div>
+                        <div class="perfil-comprobante-contenedor">
+                            <a href="">Comprobante - 26/07/2022</a>
+                            <a href="">Comprobante - 26/06/2022</a>
+                            <a href="">Comprobante - 26/05/2022</a>
+                            <a href="">Comprobante - 26/04/2022</a>
+                            <a href="">Comprobante - 26/03/2022</a>
+                            <a href="">Comprobante - 26/02/2022</a>
+                        </div>
+                    </div>
+                    <div class="perfil-configuracion">
+                        <h3>Configuracion</h3>
+                        <div class="perfil-configuracion-contenedor">
+                            <a href="">Color de Tema</a>
+                            <a href="">Cambiar Contraseña</a>
+                            <a href="" id="comentario">Envianos tu comentario</a>
+                            <a href="">Ayuda</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="seccion-contacto none" id="seccion-comentario">
+                <div class="seccion-contacto-volver" id="seccion-comentario-volver" >
+                    <button></button>
+                        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.96049 2.84832e-05C9.19701 -0.00133894 9.43147 0.0439936 9.65043 0.133428C9.86939 0.222863 10.0685 0.354643 10.2365 0.521206C10.4049 0.688275 10.5386 0.887041 10.6299 1.10604C10.7211 1.32504 10.7681 1.55994 10.7681 1.79719C10.7681 2.03443 10.7211 2.26933 10.6299 2.48833C10.5386 2.70733 10.4049 2.9061 10.2365 3.07317L4.28788 8.98582L10.0028 14.9344C10.3376 15.2711 10.5254 15.7266 10.5254 16.2014C10.5254 16.6762 10.3376 17.1317 10.0028 17.4684C9.83577 17.6368 9.637 17.7705 9.418 17.8618C9.199 17.953 8.9641 18 8.72686 18C8.48961 18 8.25471 17.953 8.03571 17.8618C7.81671 17.7705 7.61794 17.6368 7.45088 17.4684L0.513848 10.2798C0.18456 9.94383 0.000117216 9.49217 0.000117258 9.02176C0.000117299 8.55135 0.18456 8.09969 0.513848 7.76375L7.70248 0.575118C7.86379 0.400916 8.05801 0.260403 8.27394 0.161694C8.48986 0.0629855 8.72321 0.00803886 8.96049 2.84832e-05V2.84832e-05Z"/>
+                        </svg>
+                        Volver
+                    </button>
+                </div>
+                <article class="contacto-contenido">
+                    <form action="" class="contacto-form">
+                        <div class="contacto-form-titulo">
+                            <h2>Envianos tu comentario</h2>
+                            <h4>Tu opinion nos ayuda a Mejorar</h4>
+                        </div>
+                        <div class="contacto-form-inputs">
+                            <div class="contacto-form-input">
+                                <label for="">Tu Nombre</label>
+                                <input type="text">
+                            </div>
+                            <div class="contacto-form-input">
+                                <label for="">Tu Email</label>
+                                <input type="mail">
+                            </div>
+                            <div class="contacto-form-input">
+                                <label for="">Tu Comentario</label>
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="contacto-form-boton">
+                            <button>Enviar</button>
+                        </div>
+                    </form>
                 </article>
             </section>
         </main>
