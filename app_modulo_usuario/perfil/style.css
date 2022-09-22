@@ -12,19 +12,19 @@
 
 .perfil-detalle {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2,1fr);
-    justify-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 40%));
+    justify-content: space-around;
+    gap: 1rem 3rem;
 }
 
 .perfil-datos,
 .perfil-suscripcion,
 .perfil-comprobante,
 .perfil-configuracion {
-    margin: 1rem;
-    width: 70%;
+    width: 100%;
 }
 
+    
 .perfil-suscripcion{
     grid-column: 2/3;
     grid-row: 1/3;
@@ -34,6 +34,7 @@
     grid-column: 1/2;
     grid-row: 2/3;
 }
+
 
 .perfil-datos-contenedor,
 .perfil-suscripcion-contenedor,
@@ -193,12 +194,38 @@
    background-color: var(--first-dark-color);
 }
 
+
+@media screen and (max-width: 1200px) {
+    .main{
+        padding: 64px 0 64px 64px;
+        min-height: 100vh;
+    }
+
+    .perfil-detalle {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
+    }
+
+}
 @media screen and (max-width: 768px) {
     .main{
         padding: 64px 0 64px 64px;
         min-height: 100vh;
     }
 
+    .perfil-detalle {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 90%));
+        justify-content: start;
+    }
+
+    .perfil-suscripcion{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
+    .perfil-configuracion{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
 }
 
 @media screen and (max-width: 512px) {
@@ -212,5 +239,18 @@
         padding:0;
         padding-top: 4rem;
     }
+
+    .perfil-datos-contenedor div p{
+        font-size: 18px;
+    }
+    
+
+    
+    .perfil-suscripcion-contenedor a,
+    .perfil-comprobante-contenedor a,
+    .perfil-configuracion-contenedor a{
+        font-size: 16px;
+    }
+    
 
 }
