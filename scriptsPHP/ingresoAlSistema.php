@@ -23,12 +23,14 @@
 
         if($fila['contraseña'] == $pas) {
             $aceptado = true;
+            $_SESSION['nivel'] = $fila['nivel'];
+
         }
         else {
             $aceptado =  false;
         }
-
         $dbh = null;
+
         return $aceptado;
     }
 

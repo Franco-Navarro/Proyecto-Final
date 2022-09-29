@@ -1,15 +1,13 @@
 /* ***** Custom properties ***** */
 :root{
     --first-light-color: #D9A25F;
-    --first-dark-color: #CC8229;
-    --second-color: #38A68E;
-    --second-dark-color: #137560;
+    --first-dark-color: #BF8F54;
     --background-color: #F6F6F6;
     --background-color-dark: rgba(26, 26, 26, 0.8);
     --background-input: rgba(26, 26, 26, 0.2);
     --text-color-black: #1A1A1A;
     --text-color-white: #F6F6F6;
-    --error-color: #CB2B2B;
+    --error-color: #F45959;
     --ok-color: #63DF84;
     --font: 'Poppins', sans-serif;
     --max-widht: 1200px;
@@ -47,7 +45,7 @@ a{
 }
 
 a:hover{
-    color: var(--second-dark-color);
+    color: var(--first-dark-color);
 }
 
 h1 {

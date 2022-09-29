@@ -210,6 +210,11 @@
     background: var(--first-dark-color);
 }
 
+.navegador-lista li:hover a,
+.navegador-salir:hover a{
+    color: var(--text-color-black);
+}
+
 .navegador-abierto .navegador-lista li > a {
     text-decoration: none;
     display: flex;
@@ -386,19 +391,48 @@
 
 .footer {
     width: 100%;
-    height: 64px;
+    height: 5rem;
     background-color: var(--text-color-black);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
- }
+  }
+ 
+  .git-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+  }
+ 
+  .git-linea {
+    width: 45%;
+    height: 0;
+    border-top: 1px solid var(--text-color-white);
+ 
+  }
+ 
+  .copy-container p{
+    margin: 0;
+    padding: 0;
+    color: var(--text-color-white);
+  }
 
  @media screen and (max-width: 512px) {
 
     .footer {
         margin-bottom: 44px;
     }
+
+     
+  .git-linea {
+    width: 30%;
+    height: 0;
+    border-top: 1px solid var(--text-color-white);
+ 
+  }
 }
 
 .none{
