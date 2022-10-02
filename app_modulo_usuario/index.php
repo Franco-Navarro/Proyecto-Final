@@ -1,5 +1,5 @@
 <?php
-    include("scriptsPHP/manejoSesion.inc");
+    include("../scriptsPHP/manejoSesion.inc");
 
     header('Location:menu/index.php');
     exit();

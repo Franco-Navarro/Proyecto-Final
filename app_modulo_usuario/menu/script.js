@@ -1,6 +1,6 @@
 
 // CERRAR SESION
-document.getElementById("cerrar-sesion").onclick = ()=> location.href = '../scriptsPHP/destruirSesion.php';
+document.getElementById("cerrar-sesion").onclick = ()=> location.href = '../../scriptsPHP/destruirSesion.php';
 
 // DESPLIEGA EL MODAL DE FILTROS
 document.getElementById("buscador-filtro-boton").addEventListener("click", ()=> {

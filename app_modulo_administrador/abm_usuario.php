@@ -10,10 +10,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kindlent</title>
-    <link rel="icon" href="assets/icono.svg"/>
-    <link rel="stylesheet" href="../app_modulo_usuario/styles/componentes.css">
-    <link rel="stylesheet" href="../app_modulo_usuario/styles/modoOscuro.css">
-    <link rel="stylesheet" href="../app_modulo_usuario/styles/base.css">
+    <link rel="icon" href="../assets/icono.svg"/>
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="../styles/modoOscuro.css">
+    <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
 <body id="body">
     <header class="header" id="home">
         <div class="header-logo">
-            <a href="index.php"><img src="assets/logo.svg" alt=""></a>
+            <a href="index.php"><img src="../assets/logo.svg" alt=""></a>
         </div>
     </header>
 
@@ -51,13 +51,13 @@
                 </a>
             </li>
             <li>
-                    <a href="../app_modulo_usuario/index.php">
+                <a href="../app_modulo_usuario/index.php">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0H9.14286V9.14286H0V0ZM11.4286 0H20.5714V9.14286H11.4286V0ZM22.8571 0H32V9.14286H22.8571V0ZM0 11.4286H9.14286V20.5714H0V11.4286ZM11.4286 11.4286H20.5714V20.5714H11.4286V11.4286ZM22.8571 11.4286H32V20.5714H22.8571V11.4286ZM0 22.8571H9.14286V32H0V22.8571ZM11.4286 22.8571H20.5714V32H11.4286V22.8571ZM22.8571 22.8571H32V32H22.8571V22.8571Z" fill="#1A1A1A"/>
-</svg>
-                        <label for="">Aplicacion</label>
-                    </a>
-                </li>
+                    <path d="M0 0H9.14286V9.14286H0V0ZM11.4286 0H20.5714V9.14286H11.4286V0ZM22.8571 0H32V9.14286H22.8571V0ZM0 11.4286H9.14286V20.5714H0V11.4286ZM11.4286 11.4286H20.5714V20.5714H11.4286V11.4286ZM22.8571 11.4286H32V20.5714H22.8571V11.4286ZM0 22.8571H9.14286V32H0V22.8571ZM11.4286 22.8571H20.5714V32H11.4286V22.8571ZM22.8571 22.8571H32V32H22.8571V22.8571Z" fill="#1A1A1A"/>
+                    </svg>
+                    <label for="">Aplicacion</label>
+                </a>
+            </li>
         </ul>
         <button class="navegador-salir" id="cerrar-sesion">
             <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">

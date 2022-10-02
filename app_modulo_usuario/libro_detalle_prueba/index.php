@@ -1,7 +1,5 @@
 <?php
-    include("../scriptsPHP/manejoSesion.inc");
-
-    echo '';
+    include("../../scriptsPHP/manejoSesion.inc");
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +9,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="../styles/base.css">
-        <link rel="stylesheet" type="text/css" href="../styles/componentes.css">
-        <link rel="stylesheet" type="text/css" href="../styles/modoOscuro.css">
+        <link rel="stylesheet" type="text/css" href="../../styles/base.css">
+        <link rel="stylesheet" type="text/css" href="../../styles/componentes.css">
+        <link rel="stylesheet" type="text/css" href="../../styles/modoOscuro.css">
         <title>Kindlen`t</title>
-        <link rel="icon" href="../assets/icono.svg"/>
+        <link rel="icon" href="../../assets/icono.svg"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
@@ -24,7 +22,7 @@
     <body id="body">
         <header class="header" id="home">
             <div class="header-logo">
-                <a href="../menu/index.php"><img src="../assets/logo.svg" alt=""></a>
+                <a href="../menu/index.php"><img src="../../assets/logo.svg" alt=""></a>
             </div>
             <aside class="header-buscador" id="buscador-contenedor">
                 <div class="header-buscador-filtro" id="buscador-filtro">
@@ -116,8 +114,7 @@
             <section class="seccion-libro-detalle">
                 <article class="libro-detalle">
                     <div class="libro-detalle-contenedor">
-                        <img class="libro-detalle-imagen" src="../assets/portada-ejemplo.png" alt="portada de ejemplo">
-                        
+                        <img class="tarjeta-libro-portada" src="../../assets/portada/El_camino_de_los_reyes.png" alt="portada de ejemplo">
                         <div class="libro-detalle-contenido">
                             <h2 class="libro-detalle-titulo">El camino de los reyes (El archivo de las tormenteas 1)</h2>
                             <h3 class="libro-detalle-autor">Brandon Sanderson</h3>

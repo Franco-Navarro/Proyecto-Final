@@ -3,7 +3,7 @@
 
 
 // PARAMETROS PARA CARGAR EL PDF
-url = '../assets/El_camino_de_los_reyes.pdf';
+url = '../../assets/pdf/El_camino_de_los_reyes.pdf';
 let pdfCargado = null, // VARIABLE PARA EL ARCHIVO
 tipoActual = false; // VARIABLE PARA EL TIPO DE LECTURA: false 1 PAGINA; true 2 PAGINA
 // ES UNA MIERDA LO DE true o false YA LO SE LO TENGO QUE CAMBIAR

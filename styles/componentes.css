@@ -317,6 +317,10 @@
     display: flex;
 }
 
+.tarjeta-libro-contenedor img{
+    max-height: 200px;
+}
+
 .tarjeta-libro-contenido {
     padding: 0.2rem 0.5rem;
 }
