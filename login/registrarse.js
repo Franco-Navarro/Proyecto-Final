@@ -1,25 +1,41 @@
-const $modalRegs = document.getElementById("seccion-registro"),
-$modalLogin = document.getElementById("seccion-login"),
+const $seccionLogin = document.getElementById("seccion-login"),
 $boton = document.getElementById("ingresar-reg"),
+$botonVolver = document.getElementById("registro-salir"),
 $seccionRegistro = document.getElementById("seccion-registro"),
 $seccionTarjeta = document.getElementById("seccion-tarjeta"),
 $seccionSuscripcion = document.getElementById("seccion-suscripcion"),
-
+$numero = document.getElementById("numero-tarjeta"),
+$nombre = document.getElementById("nombre-tarjeta"),
+$fecha = document.getElementById("fecha-tarjeta"),
+$codigo = document.getElementById("codigo-tarjeta"),
+$dni = document.getElementById("dni-tarjeta"),
+$tarjetaNumero = document.getElementById("mostrar-numeros"),
+$tarjetaNombre = document.getElementById("mostrar-nombre"),
+$tarjetaFecha = document.getElementById("mostrar-fecha"),
 datosRegistro = { usuario: null, email: null, contraseña: null, tipoSuscripcion: null},
 datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null };
 
 // CAMBIA DEL FORM LOGIN AL FORM REGISTRO
 document.getElementById("boton-registro").onclick = (e)=> {
     e.preventDefault();
-    $modalRegs.classList.remove("none");
-    $modalLogin.classList.add("none");
+    $seccionRegistro.classList.remove("none");
+    $seccionLogin.classList.add("none");
  }
 
 // CAMBIA DEL FORM REGISTRO AL FORM LOGIN
 document.getElementById("volver-login").onclick = (e)=> {
     e.preventDefault();
-    $modalRegs.classList.add("none");
-    $modalLogin.classList.remove("none");
+    $seccionRegistro.classList.add("none");
+    $seccionLogin.classList.remove("none");
+}
+
+$botonVolver.onclick = (e)=> {
+    e.preventDefault();
+    $botonVolver.classList.add("none");
+    $seccionRegistro.classList.add("none");
+    $seccionSuscripcion.classList.add("none");
+    $seccionTarjeta.classList.add("none");
+    $seccionLogin.classList.remove("none");
 }
 
 // CARGA LOS DATOS DEL FORM REGISTRO AL OBJETO DATOSREGISTRO
@@ -38,6 +54,7 @@ document.getElementById("registro-boton").addEventListener("click", (e)=> {
 
         $seccionRegistro.classList.toggle("none");
         $seccionSuscripcion.classList.toggle("none");
+        $botonVolver.classList.toggle("none");
     }
     else {
         alert("Complete todos los campos");
@@ -58,12 +75,6 @@ document.getElementById("suscripcion-premium").addEventListener("click", ()=> {
 // CARGA LOS DATOS DEL FORM REGISTRO AL OBJETO DATOSREGISTRO
 document.getElementById("tarjeta-boton").addEventListener("click", (e)=> {
     e.preventDefault();
-
-    const $numero = document.getElementById("numero-tarjeta"),
-    $nombre = document.getElementById("nombre-tarjeta"),
-    $fecha = document.getElementById("fecha-tarjeta"),
-    $codigo = document.getElementById("codigo-tarjeta"),
-    $dni = document.getElementById("dni-tarjeta");
 
     if(verificarDatos($nombre,$numero,$fecha,$codigo,$dni)) {
         // LA EXPRESION / /g ELIMINA LOS ESPACIOS EN BLANCO 
@@ -135,3 +146,58 @@ function verificarDatos(...nodos) {
     }
     return true
 }
+
+
+// MUESTREO DE DATOS DE TARJETA INGRESADOS
+$numero.addEventListener("keyup", ()=> {
+    if($numero.value == ""){
+        $tarjetaNumero.innerText = "**** **** **** ****"
+    }
+    else if($numero.value.length <= $numero.max){
+        if($numero.value.length === 4) {
+            $numero.value = $numero.value + " ";
+            
+        }
+
+        if($numero.value.length === 9) {
+            $numero.value = $numero.value + " ";
+        }
+
+        if($numero.value.length === 14) {
+            $numero.value = $numero.value + " ";
+        }
+        $tarjetaNumero.innerText = $numero.value;
+    }
+    else {
+        $numero.value = $tarjetaNumero.innerText;
+    }
+})
+
+$nombre.addEventListener("keyup", ()=> {
+    if($nombre.value == ""){
+        $tarjetaNombre.innerText = "Nombre y Apellido"
+    }
+    else if($nombre.value.length <= $nombre.max){
+        $tarjetaNombre.innerText = $nombre.value.toUpperCase();
+    }
+    else {
+        $nombre.value = $tarjetaNombre.innerText;
+    }
+})
+
+$fecha.addEventListener("keyup", ()=> {
+    if($fecha.value == ""){
+        $tarjetaFecha.innerText = "MM/AA"
+    }
+    else if($fecha.value.length <= $fecha.max){
+        if($fecha.value.length === 2) {
+            $fecha.value = $fecha.value + "/";
+            
+        }
+
+        $tarjetaFecha.innerText = $fecha.value;
+    }
+    else {
+        $fecha.value = $tarjetaFecha.innerText;
+    }
+})
