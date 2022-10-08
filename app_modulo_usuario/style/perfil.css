@@ -1,0 +1,477 @@
+
+.main{
+    padding: 64px 0 64px 128px;
+    min-height: 100vh;
+}
+
+/* SECCION DATOS DE PERFIL */
+
+.seccion-perfil {
+    padding: 1rem;
+}
+
+.perfil-detalle {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 40%));
+    justify-content: space-around;
+    gap: 1rem 3rem;
+}
+
+.perfil-datos,
+.perfil-suscripcion,
+.perfil-comprobante,
+.perfil-configuracion {
+    width: 100%;
+}
+
+    
+.perfil-suscripcion{
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.perfil-configuracion{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+
+.perfil-datos-contenedor,
+.perfil-suscripcion-contenedor,
+.perfil-comprobante-contenedor,
+.perfil-configuracion-contenedor {
+    background-color: var(--first-light-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+
+}
+
+.perfil-datos-contenedor div {
+    display: flex;
+    gap: 2rem;
+}
+
+.perfil-datos-contenedor div p{
+    font-size: 20px;
+    margin: 0.5rem 0;
+}
+
+.perfil-suscripcion-contenedor div{
+    display: flex;
+    gap: 0 2rem;
+    justify-content: space-between;
+}
+
+.perfil-suscripcion-contenedor a,
+.perfil-comprobante-contenedor a,
+.perfil-configuracion-contenedor a{
+    display: block;
+    margin: 1rem 0;
+    font-size: 18px;
+}
+
+
+/* SECCION FORMULARIO DE CONTACTO*/
+
+.seccion-contacto {
+    padding: 1rem;
+    position: relative;
+}
+
+.seccion-contacto-volver {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.seccion-contacto-volver button{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-color-black);
+    font-size: 18px;
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.seccion-contacto-volver button:hover{
+    border-bottom: 2px solid var(--text-color-black);
+}
+
+.seccion-contacto-volver button svg{
+    margin-right: 1rem;
+    fill: var(--text-color-black);
+}
+
+.contacto-contenido{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacto-form {
+    width: 600px;
+    background-color: var(--text-color-black);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--text-color-white);
+    padding: 1rem;
+}
+
+.contacto-form-titulo {
+    width: 100%;
+}
+
+
+.contacto-form-input label{
+   display: block;
+   margin-bottom: 0.3rem;
+   font-size: 16px;
+}
+
+.contacto-form-input input,
+.contacto-form-input textarea {
+   width: 100%;
+   height: 2rem;
+   border-radius: 8px;
+   border: none;
+   font-size: 18px;
+   font-family: var(--font);
+   font-weight: 400;
+   padding-left: 0.5rem;
+   transition: opacity 0.3s;
+   box-shadow: var(--box-shadow);
+   opacity: 0.6;
+   margin-bottom: 1rem;
+}
+
+.contacto-form-input input:hover,
+.contacto-form-input textarea:hover{
+   opacity: 0.9;
+}
+
+.contacto-form-input input:focus,
+.contacto-form-input textarea:focus{
+   opacity: 1;
+   outline: none;
+}
+
+.contacto-form-input:nth-child(3)  textarea{
+    height: 160px;
+    
+   resize: none;
+}
+
+.contacto-form-boton {
+   text-align: center;
+}
+
+.contacto-form-boton button{
+   width: 120px;
+   height: 2rem;
+   background-color: var(--first-light-color);
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   font-family: var(--font);
+   cursor: pointer;
+   transition: background 0.3s;
+   box-shadow: var(--box-shadow);
+   margin-bottom: 0.7rem;
+}
+
+.contacto-form-boton button:hover{
+   background-color: var(--first-dark-color);
+}
+
+
+.tipo-suscripcion-seccion,
+.datos-tarjeta-seccion{
+   width: 100%;
+   height: 100vh;
+   box-shadow: var(--box-shadow);
+}
+
+.tipo-suscripcion-contenido,
+.datos-tarjeta-contenido {
+   width: 100%;
+   height: 100%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+
+.datos-tarjeta-form-input label{
+   display: block;
+   margin-bottom: 0.3rem;
+   font-size: 16px;
+}
+
+.datos-tarjeta-form-input input{
+   width: 100%;
+   height: 2rem;
+   border-radius: 8px;
+   border: none;
+   font-size: 18px;
+   font-family: var(--font);
+   font-weight: 400;
+   padding-left: 0.5rem;
+   transition: opacity 0.3s;
+   box-shadow: var(--box-shadow);
+   opacity: 0.6;
+}
+
+.datos-tarjeta-form-input input:hover{
+   opacity: 0.9;
+}
+
+.datos-tarjeta-form-input input:focus{
+   opacity: 1;
+   outline: none;
+}
+
+
+.tipo-suscripcion-button button,
+.datos-tarjeta-form-button button{
+   width: 120px;
+   height: 2rem;
+   background-color: var(--first-light-color);
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   font-family: var(--font);
+   cursor: pointer;
+   transition: background 0.3s;
+   box-shadow: var(--box-shadow);
+   margin-top: 1rem;
+}
+
+.tipo-suscripcion-button button:hover,
+.datos-tarjeta-form-button button:hover {
+   background-color: var(--first-dark-color);
+}
+
+
+
+.tipo-suscripcion-gratuita,
+.tipo-suscripcion-premium,
+.datos-tarjeta-form{
+  width: 380px;
+  height: 65%;
+  background-color: var(--text-color-black);
+  color: var(--background-color);
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.tipo-suscripcion-premium{
+  background-color: var(--first-light-color);
+  color: var(--text-color-black);
+}
+
+.tipo-suscripcion-premium .tipo-suscripcion-button button{
+  background-color: var(--text-color-black);
+  color: var(--text-color-white);
+}
+
+.tipo-suscripcion-titulo{
+  text-align: center;
+}
+
+.tipo-suscripcion-titulo h2{
+  font-size: 32px;
+}
+
+.datos-tarjeta-form-medio {
+  display: flex;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.datos-tarjeta-form-medio > .datos-tarjeta-form-input{
+  overflow: hidden;
+   text-overflow:ellipsis;
+   white-space:nowrap;
+   width: 50%;
+}
+
+.datos-tarjeta-form-medio > .datos-tarjeta-form-input label{
+  overflow: hidden;
+   text-overflow:ellipsis;
+   white-space:nowrap;
+   width: 90%;
+}
+
+.datos-tarjeta-form-medio > .datos-tarjeta-form-input input{
+   width: 100%;
+}
+
+.datos-tarjeta-tarjeta {
+  background-color: var(--first-light-color);
+  width: 380px;
+  height: 25%;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left:2rem;
+}
+
+.datos-tarjeta-tarjeta-deco {
+  width: 25%;
+  height: 30%;
+  background-color: var(--background-color-dark);
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 8px;
+  top: 1rem;
+  left: 1rem;
+}
+.datos-tarjeta-tarjeta-detalle {
+  width: 90%;
+  margin: 1.5rem 2rem;
+}
+
+.datos-tarjeta-tarjeta-detalle p{
+  padding: 0;
+  margin: 0;
+}
+.datos-tarjeta-tarjeta-detalle-numeros {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.datos-tarjeta-tarjeta-detalle-nombre {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main{
+        padding: 64px 0 64px 64px;
+        min-height: 100vh;
+    }
+
+    .perfil-detalle {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .main{
+        padding: 64px 0 64px 64px;
+        min-height: 100vh;
+    }
+
+    .perfil-detalle {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 90%));
+        justify-content: start;
+    }
+
+    .perfil-suscripcion{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
+    .perfil-configuracion{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .tipo-suscripcion-seccion {
+        padding: 1rem;
+     }
+   
+     .tipo-suscripcion-contenido {
+        flex-direction: column-reverse;
+     }
+   
+     .tipo-suscripcion-gratuita,
+     .tipo-suscripcion-premium {
+        margin: 1rem auto;
+        min-height: 500px;
+        max-height: 600px;
+     }
+   
+     .datos-tarjeta-contenido {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 2rem;
+     }
+   
+     .datos-tarjeta-form {
+        min-height: 500px;
+        max-height: 600px;
+     }
+   
+     .datos-tarjeta-tarjeta {
+        display: none;
+     }
+}
+
+@media screen and (max-width: 512px) {
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .main {
+        padding:0;
+        padding-top: 4rem;
+    }
+
+    .perfil-datos-contenedor div p{
+        font-size: 18px;
+    }
+    
+
+    
+    .perfil-suscripcion-contenedor a,
+    .perfil-comprobante-contenedor a,
+    .perfil-configuracion-contenedor a{
+        font-size: 16px;
+    }
+    
+    .tipo-suscripcion-seccion {
+        height: auto;
+        box-sizing: border-box;
+   
+     }
+   
+     .datos-tarjeta-seccion  {
+        box-sizing: border-box;
+        padding: 1rem;
+     }
+   
+     .tipo-suscripcion-gratuita, 
+     .tipo-suscripcion-premium, 
+     .datos-tarjeta-form  {
+        width: 100%;
+     }
+     
+}

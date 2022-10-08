@@ -379,7 +379,8 @@ p {
  .registro-form-button button,
  .tipo-suscripcion-button button,
  .datos-tarjeta-form-button button,
- .recuperar-form-button button {
+ .recuperar-form-button button,
+ .mensaje-boton button {
     width: 120px;
     height: 2rem;
     background-color: var(--first-light-color);
@@ -396,7 +397,8 @@ p {
  .registro-form-button button:hover,
  .tipo-suscripcion-button button:hover,
  .datos-tarjeta-form-button button:hover,
- .recuperar-form-button button:hover {
+ .recuperar-form-button button:hover,
+ .mensaje-boton button:hover {
     background-color: var(--first-dark-color);
  }
 
@@ -409,108 +411,6 @@ p {
 
  .registro-izq-enlaces a{
     margin: 0.2rem;
- }
-
- .tipo-suscripcion-gratuita,
- .tipo-suscripcion-premium,
- .datos-tarjeta-form{
-   width: 380px;
-   height: 65%;
-   background-color: var(--text-color-black);
-   color: var(--background-color);
-   padding: 2rem;
-   border-radius: 16px;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   margin: 0 1.5rem;
-   box-shadow: var(--box-shadow);
- }
-
- .tipo-suscripcion-premium{
-   background-color: var(--first-light-color);
-   color: var(--text-color-black);
- }
-
- .tipo-suscripcion-premium .tipo-suscripcion-button button{
-   background-color: var(--text-color-black);
-   color: var(--text-color-white);
- }
-
- .tipo-suscripcion-titulo{
-   text-align: center;
- }
-
- .tipo-suscripcion-titulo h2{
-   font-size: 32px;
- }
-
- .datos-tarjeta-form-medio {
-   display: flex;
-   gap: 2rem;
-   max-width: 100%;
- }
-
- .datos-tarjeta-form-medio > .datos-tarjeta-form-input{
-   overflow: hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    width: 50%;
- }
-
- .datos-tarjeta-form-medio > .datos-tarjeta-form-input label{
-   overflow: hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    width: 90%;
- }
-
- .datos-tarjeta-form-medio > .datos-tarjeta-form-input input{
-    width: 100%;
- }
-
- .datos-tarjeta-tarjeta {
-   background-color: var(--first-light-color);
-   width: 380px;
-   height: 25%;
-   border-radius: 16px;
-   position: relative;
-   display: flex;
-   align-items: flex-end;
-   justify-content: center;
-   margin-left:2rem;
- }
-
- .datos-tarjeta-tarjeta-deco {
-   width: 25%;
-   height: 30%;
-   background-color: var(--background-color-dark);
-   opacity: 0.5;
-   position: absolute;
-   border-radius: 8px;
-   top: 1rem;
-   left: 1rem;
- }
- .datos-tarjeta-tarjeta-detalle {
-   width: 90%;
-   margin: 1.5rem 2rem;
- }
-
- .datos-tarjeta-tarjeta-detalle p{
-   padding: 0;
-   margin: 0;
- }
- .datos-tarjeta-tarjeta-detalle-numeros {
-   font-size: 28px;
-   font-weight: 500;
- }
-
- .datos-tarjeta-tarjeta-detalle-nombre {
-   font-size: 18px;
-   font-weight: 500;
-   display: flex;
-   justify-content: space-between;
  }
 
  .recuperar-titulo {
@@ -592,19 +492,11 @@ p {
 .registro-salir button svg{
    margin-right: 1rem;
 }
+
+
  .none {
     display: none;
  }
-
-/* ***** Dark theme ***** */
-.dark {
-    background-color: var(--background-color-dark);
-    color: var(--text-color-white);
-}
-
-body.dark .portfolio-modal{
-    background-color: var(--background-color-dark);
-}
 
 @media screen and (max-width: 768px) {
    .login-contenido-izq,

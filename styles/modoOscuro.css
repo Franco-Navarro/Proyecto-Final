@@ -1,10 +1,18 @@
+/* ***** Custom properties ***** */
+:root{
+    --first-light-color: #D9A25F;
+    --first-dark-color: #BF8F54;
+    --background-color-oscuro: #2F2F2F;
+    --text-color-black: #1A1A1A;
+    --text-color-white: #F6F6F6;
+}
 
 /* ***** Dark theme ***** */
 .dark {
-    background-color: var(--background-color-dark);
+    background-color: var(--background-color-oscuro);
     color: var(--text-color-white);
 }
 
-body.dark .portfolio-modal{
-    background-color: var(--background-color-dark);
+body.dark label{
+    color: var(--text-color-white);
 }

@@ -1,0 +1,123 @@
+
+.main{
+    padding: 64px 128px 0 128px;
+    min-height: 100vh;
+}
+
+.seccion-libro-detalle {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start ;
+    width: 100%;
+}
+
+.seccion-libro-detalle-titulo {
+    margin: 1rem;
+}
+
+.libro-detalle {
+    margin: 1rem;
+}
+
+.libro-detalle-contenedor {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    
+}
+
+.libro-detalle-imagen{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.libro-detalle-contenido {
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-light-color);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.libro-detalle-descripcion{
+    font-size: 18px;
+}
+
+.libro-detalle-leer-boton {
+    background-color: transparent;
+    border: none;
+    font-family: var(--font);
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: border 0.3s;
+    border-bottom: 2px solid transparent;
+    align-self: end;
+}
+
+.libro-detalle-leer-boton:hover {
+    border-bottom: 2px solid var(--text-color-black);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 4rem 1rem 1rem 4rem;
+    }
+    .seccion-libro-detalle {
+        width: 100%;
+    }
+    .libro-detalle {
+        width: 100%;
+    }
+    .libro-detalle-contenedor {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .libro-detalle-imagen {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .libro-detalle-contenido {
+        margin: 1rem 0;
+    }
+}
+
+
+@media screen and (max-width: 512px) {
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .main {
+        padding:0;
+        padding-top: 4rem;
+    }
+
+    .libro-detalle-contenido{
+        padding: 0.3rem;
+    }
+
+    .libro-detalle-contenedor {
+        flex-direction: column;
+    }
+
+    .libro-detalle-titulo {
+        font-size: 24px;
+    }
+
+    .libro-detalle-autor{
+        font-size: 20px;
+    }
+
+    .libro-detalle-descripcion{
+        font-size: 15px;
+    }
+
+}

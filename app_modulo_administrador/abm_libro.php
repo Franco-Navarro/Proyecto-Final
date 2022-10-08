@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
 </head>
 
-<body id="body">
+<body id="body" class="dark">
     <header class="header" id="home">
         <div class="header-logo">
             <a href="index.php"><img src="../assets/logo.svg" alt=""></a>
@@ -423,7 +423,7 @@
             <p><small>Copyright 2022 Kindlen't Inc</small></p>
         </div>
     </footer>
-
+    <script src="../scripts/creacionNavegador.js"></script>
     <script src="script.js"></script>
 </body>
 
