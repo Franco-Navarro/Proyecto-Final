@@ -1,4 +1,4 @@
-function creacionMensaje(estado, mensaje, detalle = undefined) {
+export function mensajeModal(estado, mensaje, detalle = undefined) {
     let $body = document.getElementById("body"),
     $section = document.createElement("section"),
     $article = document.createElement("article"),

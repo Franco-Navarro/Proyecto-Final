@@ -1,15 +1,18 @@
-const $seccion = document.getElementById("tarjeta-container");
+import {detalleLibro} from "./detalleLibro.js";
 
-function crearTarjeta(json) {
+
+export function tarjetaLibro(json) {
     let portada = json['portada'],
     titulo = json['titulo'].replace(/_/g, " "),
     autor = json['autor'],
     descripcion = json['descripcion'],
-    pdf = json['pdf'],
     $tarjeta = document.createElement("article");
 
     $tarjeta.classList.add("tarjeta-libro");
-    $tarjeta.onclick = ()=> abrirLibro(pdf);
+    $tarjeta.onclick = ()=> {
+        location.hash = json['titulo'];
+        detalleLibro(json);
+    } 
 
     let tarjetaContenido = `<div class="tarjeta-libro-contenedor">
                             <img class="tarjeta-libro-portada" src="${portada}" alt="portada de ejemplo">
@@ -21,9 +24,6 @@ function crearTarjeta(json) {
                         </div>`;
 
     $tarjeta.innerHTML = tarjetaContenido;
-    $seccion.appendChild($tarjeta);
-}
 
-function abrirLibro(url){
-    alert(url)
+    return $tarjeta;
 }
