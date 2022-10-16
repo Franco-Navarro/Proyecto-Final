@@ -221,7 +221,8 @@
     color: var(--text-color-black);
 }
 
-.navegador-abierto .navegador-lista li > a {
+.navegador-abierto .navegador-lista li > a,
+    .navegador-abierto .navegador-lista li > div {
     text-decoration: none;
     display: flex;
     justify-content: start;
@@ -231,11 +232,13 @@
 }
 
 .navegador-lista li > a > label,
+.navegador-lista li > div > label,
 .navegador-salir > label{
     display: none;
 }
 
-.navegador-abierto .navegador-lista li > a > label{
+.navegador-abierto .navegador-lista li > a > label,
+.navegador-abierto .navegador-lista li > div > label{
     display: inline;
 }
 

@@ -143,6 +143,7 @@
  }
 
  .tablas-seccion {
+   margin: 1rem;
     margin-top: 4rem;
     padding-right: 1rem;
     width: 100%;
@@ -164,11 +165,61 @@
     overflow-y: auto;
     white-space: nowrap;
  }
+ 
+ .tabla-botones {
+   margin: 2rem 1rem;
+   text-align: end;
+ }
+
+ .tabla-botones button{
+   width: 120px;
+   height: 2rem;
+   text-align: center;
+   border-radius: 8px;
+   box-shadow: var(--box-shadow);
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+   font-family: var(--font);
+   font-weight: 300;
+   margin: 0 1rem;
+   transition: filter 0.3s;
+ }
+
+   .tabla-botones > button:nth-child(1){
+      background-color: var(--ok-color);
+   }
+
+   .tabla-botones > button:nth-child(2) {
+      border: 1px solid var(--text-color-black);
+   }
+
+   .tabla-botones > button:hover{
+      filter: brightness(0.9) saturate(1.1);
+   }
 
  .tabla tr{
     max-height: 2.5rem;
     height: 2.5rem;
+    cursor: pointer;
  }
+
+ 
+
+ .tabla:nth-child(2) > thead:nth-child(1) > tr:nth-child(1),
+ .tabla:nth-child(1) > thead:nth-child(1) > tr:nth-child(1) {
+   cursor: auto;
+}
+
+ .tabla:nth-child(2) > thead:nth-child(1) > tr:nth-child(1):hover,
+ .tabla:nth-child(1) > thead:nth-child(1) > tr:nth-child(1):hover {
+   background-color: var(--background-color);
+}
+
+ .tabla tr:hover{
+   background-color: var(--first-light-color);
+}
+
 
  .tabla-cabecera {
     text-align: center;
@@ -184,7 +235,12 @@
     padding: 0 1rem;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis 
+    text-overflow: ellipsis ;
+    z-index: -1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
  }
 
  .tabla-cuerpo {
