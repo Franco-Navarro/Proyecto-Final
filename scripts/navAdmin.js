@@ -1,4 +1,4 @@
-export function navegador() {
+export function navegadorAdmin() {
     
     let $navegador = document.createElement('nav'),
     $botonAbrir = document.createElement('button'),

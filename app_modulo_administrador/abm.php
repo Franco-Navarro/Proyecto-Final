@@ -21,7 +21,6 @@
 </head>
 
 <body id="body">
-
     <main class="main " id="main-usuario">
         <section class="formABM-seccion" id="formABM-usuario">
                 <article class="formABM-contenido">
@@ -39,11 +38,11 @@
                         </div>
                         <div class="formABM-input">
                             <label for="email">Email</label>
-                            <input type="text" id="email" name="email">
+                            <input type="email" id="email" name="email">
                         </div>
                         <div class="formABM-input">
                             <label for="nivelUsuario">Nivel</label>
-                            <input type="text" id="nivelUsuario" name="nivelUsuario">
+                            <input type="number" id="nivelUsuario" name="nivelUsuario">
                         </div>
                         <div class="formABM-botones">
                             <button>Alta</button>
@@ -99,7 +98,7 @@
                         </div>
                         <div class="formABM-input">
                             <label for="nivelAcceso">Nivel</label>
-                            <input type="text" id="nivelAcceso" name="nivelAcceso">
+                            <input type="number" id="nivelAcceso" name="nivelAcceso">
                         </div>
                         <div class="formABM-textarea">
                             <label for="descripcion">Descripcion</label>

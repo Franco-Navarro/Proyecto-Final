@@ -1,7 +1,7 @@
 
 .main {
     padding: 64px 64px 128px 128px;
-    min-height: 100%;
+    min-height: 95vh;
 }
 
 /* HEADER */
@@ -152,6 +152,19 @@
     z-index: 99999;
 }
 
+.navegador-admin {
+    background-color: var(--text-color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    transition: width 0.3s;
+    z-index: 99999;
+    width: 54px;
+    left: 0;
+    bottom: 54px;
+}
+
 .navegador-abierto {
     width: 200px;
 }
@@ -300,6 +313,8 @@
 }
 
 
+
+
 /* TARJETA LIBRO */
 
 .tarjeta-libro {
@@ -410,9 +425,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
  
   .git-container {

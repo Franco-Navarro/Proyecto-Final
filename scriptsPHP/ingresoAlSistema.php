@@ -21,9 +21,9 @@
         $stmt->execute();
         $fila = $stmt->fetch();
 
-        if($fila['contraseña'] == $pas) {
+        if($fila['contrasenia'] == $pas) {
             $aceptado = true;
-            $_SESSION['nivel'] = $fila['nivel'];
+            $_SESSION['rol'] = $fila['fk_rol'];
 
         }
         else {

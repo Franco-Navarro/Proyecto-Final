@@ -25,7 +25,7 @@
         
 
 
-/*
+
         $respuesta_estado = "";
         $registro_exitoso = "";
     
@@ -59,5 +59,5 @@
     
         $dbh = null;
     
-        echo $registro_exitoso;*/
+        echo $registro_exitoso;
 ?>

@@ -37,6 +37,102 @@ export function cargarTabla(tipo) {
                 "nivel":"1",
                 "descripcion":"descripcion del libro actual"
             },
+            {
+                "titulo":"juramentada", 
+                "autor":"brandon sanderson",
+                "genero":"fantasia",
+                "saga":"el archivo de las tormentas",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"la_piedra_filosofal", 
+                "autor":"jk rowling",
+                "genero":"fantasia",
+                "saga":"harry potter",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"amanecer_rojo", 
+                "autor":"pierce brown",
+                "genero":"ciencia ficcion",
+                "saga":"amanecer rojo",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"el_alquimista", 
+                "autor":"paulo coelho",
+                "genero":"drama",
+                "saga":"el alquimista",
+                "nivel":"1",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"juramentada", 
+                "autor":"brandon sanderson",
+                "genero":"fantasia",
+                "saga":"el archivo de las tormentas",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"la_piedra_filosofal", 
+                "autor":"jk rowling",
+                "genero":"fantasia",
+                "saga":"harry potter",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"amanecer_rojo", 
+                "autor":"pierce brown",
+                "genero":"ciencia ficcion",
+                "saga":"amanecer rojo",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"el_alquimista", 
+                "autor":"paulo coelho",
+                "genero":"drama",
+                "saga":"el alquimista",
+                "nivel":"1",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"juramentada", 
+                "autor":"brandon sanderson",
+                "genero":"fantasia",
+                "saga":"el archivo de las tormentas",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"la_piedra_filosofal", 
+                "autor":"jk rowling",
+                "genero":"fantasia",
+                "saga":"harry potter",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"amanecer_rojo", 
+                "autor":"pierce brown",
+                "genero":"ciencia ficcion",
+                "saga":"amanecer rojo",
+                "nivel":"2",
+                "descripcion":"descripcion del libro actual"
+            },
+            {
+                "titulo":"el_alquimista", 
+                "autor":"paulo coelho",
+                "genero":"drama",
+                "saga":"el alquimista",
+                "nivel":"1",
+                "descripcion":"descripcion del libro actual"
+            },
         ]
     }
     let user = {

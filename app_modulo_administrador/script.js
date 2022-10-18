@@ -1,6 +1,5 @@
-
-
-import {navegador} from "../scripts/navAdmin.js";
+import {navegador} from "../scripts/navUser.js";
+import {navegadorAdmin} from "../scripts/navAdmin.js"
 import {header} from "../scripts/headerBuscador.js";
 import {footer} from "../scripts/footerGit.js";
 import {cargarTabla} from "../scripts/cargarTabla.js"
@@ -12,6 +11,7 @@ $tablaUsuario = document.getElementById("cargar-tabla-usuario"),
 $vaciarTablaLibro = document.getElementById("vaciar-tabla-libro"),
 $vaciarTablaUsuario = document.getElementById("vaciar-tabla-usuario"),
 $navegador = navegador(),
+$navegadorAdmin = navegadorAdmin(),
 $header = header(),
 $footer = footer();
 
@@ -36,3 +36,4 @@ $vaciarTablaUsuario.addEventListener("click", ()=>{
 $body.appendChild($header);
 $body.appendChild($footer);
 $body.appendChild($navegador);
+$body.appendChild($navegadorAdmin);
