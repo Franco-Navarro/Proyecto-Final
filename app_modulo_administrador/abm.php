@@ -1,6 +1,5 @@
 <?php
     include("../scriptsPHP/manejoSesion.inc");
-
 ?>
 
 <!DOCTYPE html>

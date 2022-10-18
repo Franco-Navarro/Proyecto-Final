@@ -1,5 +1,7 @@
 <?php
     include("../../scriptsPHP/manejoSesion.inc");
+    $_SESSION["rol"];
+
 ?>
 
     <!DOCTYPE html>
@@ -27,7 +29,7 @@
                 </section>
         </main>
 
-        <script type="module" src="script.js"></script>
+        <script type="module" src="script.js">const rol = <?php echo $_SESSION["rol"] ?>;</script>
         
     </body>
     
