@@ -28,24 +28,29 @@
                             <h2>Nuevo Usuario</h2>
                         </div>
                         <div class="formABM-input">
-                            <label for="usuario">Usuario</label>
-                            <input type="text" id="usuario" name="usuario">
+                            <label for="id">Id</label>
+                            <input type="text" id="id" name="id">
                         </div>
                         <div class="formABM-input">
-                            <label for="contraseña">Contraseña</label>
-                            <input type="text" id="contraseña" name="contraseña">
+                            <label for="nombre">Nombre de Usuario</label>
+                            <input type="text" id="nombre" name="nombre">
                         </div>
+
                         <div class="formABM-input">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email">
                         </div>
                         <div class="formABM-input">
-                            <label for="nivelUsuario">Nivel</label>
-                            <input type="number" id="nivelUsuario" name="nivelUsuario">
+                            <label for="roles">Rol</label>
+                            <select name="roles" id="roles">
+                            </select>
                         </div>
                         <div class="formABM-botones">
-                            <button>Alta</button>
-                            <button>Limpiar</button>
+                            <input type="submit" value="Alta">
+                            <input type="submit" value="Modificar">
+                            <input type="submit" value="Eliminar">
+                            <input type="reset" value="Limpiar">
+
                         </div>
                     </form>
                 </article>
@@ -59,10 +64,10 @@
                 <table class="tabla">
                     <thead class="tabla-cabecera">
                         <tr>
-                            <th>USUARIO</th>
-                            <th>CONTRASEÑA</th>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
                             <th>EMAIL</th>
-                            <th>NIVEL</th>
+                            <th>ROL</th>
                         </tr>
                     </thead>
                     <tbody class="tabla-cuerpo" id=tabla-cuerpo-usuario>
@@ -85,27 +90,30 @@
                         </div>
                         <div class="formABM-input">
                             <label for="autor">Autor</label>
-                            <input type="text" id="autor" name="autor">
+                            <select name="autor" id="autor"></select>
                         </div>
                         <div class="formABM-input">
                             <label for="genero">Genero</label>
-                            <input type="text" id="genero" name="genero">
+                            <select name="genero" id="genero"></select>
                         </div>
                         <div class="formABM-input">
                             <label for="saga">Saga</label>
                             <input type="text" id="saga" name="saga">
                         </div>
                         <div class="formABM-input">
-                            <label for="nivelAcceso">Nivel</label>
-                            <input type="number" id="nivelAcceso" name="nivelAcceso">
+                            <label for="paginas">Paginas</label>
+                            <input type="number" id="paginas" name="paginas">
                         </div>
                         <div class="formABM-textarea">
                             <label for="descripcion">Descripcion</label>
-                            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                            <textarea name="descripcion" id="descripcion"></textarea>
                         </div>
                         <div class="formABM-botones">
-                            <button>Alta</button>
-                            <button>Limpiar</button>
+                            <input type="submit" value="Alta">
+                            <input type="submit" value="Modificar">
+                            <input type="submit" value="Eliminar">
+                            <input type="reset" value="Limpiar">
+
                         </div>
                     </form>
                 </article>
@@ -123,7 +131,7 @@
                             <th>AUTOR</th>
                             <th>GENERO</th>
                             <th>SAGA</th>
-                            <th>NIVEL</th>
+                            <th>PAGINAS</th>
                             <th>DESCRIPCION</th>
                         </tr>
                     </thead>
