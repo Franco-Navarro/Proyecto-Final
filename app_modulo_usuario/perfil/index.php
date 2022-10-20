@@ -94,20 +94,20 @@
                         </div>
                         <div class="contacto-form-inputs">
                             <div class="contacto-form-input">
-                                <label for="">Tu Nombre</label>
-                                <input type="text">
+                                <label for="nombre">Tu Nombre</label>
+                                <input type="text" id="comentario-nombre">
                             </div>
                             <div class="contacto-form-input">
-                                <label for="">Tu Email</label>
-                                <input type="mail">
+                                <label for="email">Tu Email</label>
+                                <input type="mail" id="comentario-email">
                             </div>
                             <div class="contacto-form-input">
-                                <label for="">Tu Comentario</label>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <label for="comentario">Tu Comentario</label>
+                                <textarea name="comentario" cols="30" rows="10" id="comentario-comentario"></textarea>
                             </div>
                         </div>
                         <div class="contacto-form-boton">
-                            <button>Enviar</button>
+                            <button id="enviar-mail">Enviar</button>
                         </div>
                     </form>
                 </article>

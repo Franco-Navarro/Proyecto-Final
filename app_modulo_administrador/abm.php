@@ -21,9 +21,9 @@
 
 <body id="body">
     <main class="main " id="main-usuario">
-        <section class="formABM-seccion" id="formABM-usuario">
+        <section class="formABM-seccion" >
                 <article class="formABM-contenido">
-                    <form action="" class="formABM">
+                    <form action="" class="formABM" enctype="multipart/form-data" id="formABM-usuario">
                         <div class="formABM-titulo">
                             <h2>Nuevo Usuario</h2>
                         </div>
@@ -45,10 +45,14 @@
                             <select name="roles" id="roles">
                             </select>
                         </div>
+                        <div class="form-archivo">
+                            <label for="pdf">Subir Archivo</label>
+                            <input type="file" name="pdf" id="pdf">
+                        </div>
                         <div class="formABM-botones">
-                            <input type="submit" value="Alta">
-                            <input type="submit" value="Modificar">
-                            <input type="submit" value="Eliminar">
+                            <input type="submit" value="Alta" id="alta-usuario">
+                            <input type="submit" value="Modificar" id="modificar-usuario">
+                            <input type="submit" value="Eliminar" id="baja-usuario">
                             <input type="reset" value="Limpiar">
 
                         </div>
@@ -109,9 +113,9 @@
                             <textarea name="descripcion" id="descripcion"></textarea>
                         </div>
                         <div class="formABM-botones">
-                            <input type="submit" value="Alta">
-                            <input type="submit" value="Modificar">
-                            <input type="submit" value="Eliminar">
+                            <input type="submit" value="Alta" id="alta-libro">
+                            <input type="submit" value="Modificar" id="modificar-libro">
+                            <input type="submit" value="Eliminar" id="baja-libro">
                             <input type="reset" value="Limpiar">
 
                         </div>

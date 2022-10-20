@@ -1,3 +1,4 @@
+
 const $perfil = document.getElementById("seccion-perfil"),
 $comentario = document.getElementById("seccion-comentario"),
 $seccionTarjeta = document.getElementById("seccion-tarjeta"),
@@ -11,7 +12,9 @@ $dni = document.getElementById("dni-tarjeta"),
 $tarjetaNumero = document.getElementById("mostrar-numeros"),
 $tarjetaNombre = document.getElementById("mostrar-nombre"),
 $tarjetaFecha = document.getElementById("mostrar-fecha"),
-datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null };
+datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null },
+$botonEnviarMail = document.getElementById("enviar-mail");
+
 
 document.getElementById("comentario").addEventListener("click", (e)=> {
     e.preventDefault();
@@ -157,6 +160,7 @@ $fecha.addEventListener("keyup", ()=> {
 import {navegador} from "../../scripts/navUser.js";
 import {header} from "../../scripts/headerBuscador.js";
 import {footer} from "../../scripts/footerGit.js";
+import { enviarMail } from "../../scripts/enviarMail.js";
 
 
 let $body = document.getElementById("body"),
@@ -169,3 +173,14 @@ $footer = footer();
 $body.insertBefore($header, $main)
 $body.appendChild($footer);
 $body.appendChild($navegador);
+
+
+$botonEnviarMail.addEventListener("click", (e)=> {
+    e.preventDefault()
+    let nombre = document.getElementById("comentario-nombre").value,
+    email = document.getElementById("comentario-email").value,
+    comentario = document.getElementById("comentario-comentario").value;
+
+    enviarMail(nombre,email,comentario);
+})
+
