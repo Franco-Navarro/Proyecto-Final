@@ -3,6 +3,10 @@ import {header} from "../scripts/headerBuscador.js";
 import {footer} from "../scripts/footerGit.js";
 import {cargarTabla} from "../scripts/cargarTabla.js";
 import {cargarSelect} from "../scripts/cargarSelect.js";
+import { altaRegistro } from "../scripts/altaRegistro.js";
+import { cargarArchivo } from "../scripts/cargarArchivo.js";
+import { bajaRegistro } from "../scripts/bajaRegistro.js";
+import { modificarRegistro } from "../scripts/modificarRegistro.js";
 
 let $body = document.getElementById("body"),
 $tablaLibro = document.getElementById("cargar-tabla-libro"),
@@ -15,17 +19,16 @@ $footer = footer(),
 $selectRoles = document.getElementById("roles"),
 $selectAutores = document.getElementById("autor"),
 $selectGeneros = document.getElementById("genero"),
+$selectTitulos = document.getElementById("titulo-select"),
 $botonAltaUsuario = document.getElementById("alta-usuario"),
 $botonBajaUsuario = document.getElementById("baja-usuario"),
 $botonModiUsuario = document.getElementById("modificar-usuario"),
 $botonAltaLibro = document.getElementById("alta-libro"),
 $botonBajaLibro = document.getElementById("baja-libro"),
-$botonModiLibro = document.getElementById("modificar-libro");
+$botonModiLibro = document.getElementById("modificar-libro"),
+$botonCargaArchivo = document.getElementById("archivos-libro");
 
-$body.appendChild($header);
-$body.appendChild($footer);
-$body.appendChild($navegadorAdmin);
-
+cargarSelect($selectTitulos, "libros", "titulo");
 cargarSelect($selectAutores, "autores", "nombre");
 cargarSelect($selectGeneros,"generos", "nombre");
 cargarSelect($selectRoles,"roles", "rol");
@@ -59,16 +62,7 @@ $vaciarTablaUsuario.addEventListener("click", ()=>{
 
 $botonAltaUsuario.addEventListener("click", (e)=> {
     e.preventDefault();
-    if(confirm("Seguro que quiere enviar el formulario de alta") == true) {
-        const datos = new FormData(document.getElementById("formABM-usuario"));
-        fetch("../scriptsPHP/guardarArchivo.php", {
-            method: 'POST',
-            body: datos
-        }) 
-            .then(res => res.text() )
-            .then(json => alert(json))
-            .catch(error => console.error('Error: ', error))
-    }
+    altaRegistro("usuario");
 });
 
 $botonBajaUsuario.addEventListener("click", (e)=> {
@@ -83,7 +77,7 @@ $botonModiUsuario.addEventListener("click", (e)=> {
 
 $botonAltaLibro.addEventListener("click", (e)=> {
     e.preventDefault();
-    altaRegistro("libro")
+    altaRegistro("libro");
 });
 
 $botonBajaLibro.addEventListener("click", (e)=> {
@@ -95,3 +89,19 @@ $botonModiLibro.addEventListener("click", (e)=> {
     e.preventDefault();
     modificarRegistro("libro")
 });
+
+$botonCargaArchivo.addEventListener("click", (e)=> {
+    e.preventDefault();
+    let $seccionArchivo = document.getElementById("formABM-seccion-archivo"),
+    $botonAltaArchivo = document.getElementById("cargar-archivo");
+
+    $seccionArchivo.classList.toggle("none");
+    $botonAltaArchivo.onclick = (e)=> {
+        e.preventDefault()
+        cargarArchivo();
+    } 
+})
+
+$body.appendChild($header);
+$body.appendChild($footer);
+$body.appendChild($navegadorAdmin);

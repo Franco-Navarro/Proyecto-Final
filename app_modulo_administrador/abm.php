@@ -23,13 +23,13 @@
     <main class="main " id="main-usuario">
         <section class="formABM-seccion" >
                 <article class="formABM-contenido">
-                    <form action="" class="formABM" enctype="multipart/form-data" id="formABM-usuario">
+                    <form action="" class="formABM" id="formABM-usuario">
                         <div class="formABM-titulo">
                             <h2>Nuevo Usuario</h2>
                         </div>
                         <div class="formABM-input">
-                            <label for="id">Id</label>
-                            <input type="text" id="id" name="id">
+                            <label for="id-usuario" >Id</label>
+                            <input type="text" id="id-usuario" name="id-usuario" disabled>
                         </div>
                         <div class="formABM-input">
                             <label for="nombre">Nombre de Usuario</label>
@@ -45,9 +45,9 @@
                             <select name="roles" id="roles">
                             </select>
                         </div>
-                        <div class="form-archivo">
-                            <label for="pdf">Subir Archivo</label>
-                            <input type="file" name="pdf" id="pdf">
+                        <div class="formABM-input">
+                            <label for="contrasenia">Contraseña</label>
+                            <input type="contrasenia" id="contrasenia" name="contrasenia">
                         </div>
                         <div class="formABM-botones">
                             <input type="submit" value="Alta" id="alta-usuario">
@@ -72,6 +72,7 @@
                             <th>NOMBRE</th>
                             <th>EMAIL</th>
                             <th>ROL</th>
+                            <th>CONTRASEÑA</th>
                         </tr>
                     </thead>
                     <tbody class="tabla-cuerpo" id=tabla-cuerpo-usuario>
@@ -82,11 +83,15 @@
         </section>   
     </main>
     <main class="main none" id="main-libro">
-        <section class="formABM-seccion" id="formABM-libro">
+        <section class="formABM-seccion" >
                 <article class="formABM-contenido">
-                    <form action="" class="formABM">
+                    <form action="" class="formABM" id="formABM-libro">
                         <div class="formABM-titulo">
                             <h2>Nuevo Libro</h2>
+                        </div>
+                        <div class="formABM-input">
+                            <label for="id" >Id</label>
+                            <input type="text" id="id-libro" name="id-libro" disabled> 
                         </div>
                         <div class="formABM-input">
                             <label for="titulo">Titulo</label>
@@ -112,12 +117,38 @@
                             <label for="descripcion">Descripcion</label>
                             <textarea name="descripcion" id="descripcion"></textarea>
                         </div>
+
                         <div class="formABM-botones">
                             <input type="submit" value="Alta" id="alta-libro">
                             <input type="submit" value="Modificar" id="modificar-libro">
                             <input type="submit" value="Eliminar" id="baja-libro">
                             <input type="reset" value="Limpiar">
-
+                            <input type="submit" value="Archivos" id="archivos-libro">
+                        </div>
+                    </form>
+                </article>
+        </section>
+        <section  class="formABM-seccion none" id="formABM-seccion-archivo">
+        <article class="formABM-contenido">
+                    <form action="" class="formABM" enctype="multipart/form-data"  id="formABM-archivo">
+                        <div class="formABM-titulo">
+                            <h2>Cargar Archivos</h2>
+                        </div>
+                        <div class="formABM-input">
+                            <label for="titulo-select">Titulos</label>
+                            <select name="titulo-select" id="titulo-select"></select>
+                        </div>
+                        <div class="formABM-input">
+                            <label for="pdf">Subir PDF</label>
+                            <input type="file" name="pdf" id="pdf">
+                        </div>
+                        <div class="formABM-input">
+                            <label for="portada">Subir Portada</label>
+                            <input type="file" name="portada" id="portada">
+                        </div>
+                        <div class="formABM-botones">
+                            <input type="submit" value="Cargar" id="cargar-archivo">
+                            <input type="reset" value="Limpiar">
                         </div>
                     </form>
                 </article>
@@ -131,6 +162,7 @@
                 <table class="tabla">
                     <thead class="tabla-cabecera">
                         <tr>
+                            <th>ID</th>
                             <th>TITULO</th>
                             <th>AUTOR</th>
                             <th>GENERO</th>

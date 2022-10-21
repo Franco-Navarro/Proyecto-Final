@@ -11,7 +11,6 @@ export function cargarSelect(element,tabla, columna) {
         .then(json => {
             json.forEach(e => {
                 let $option = document.createElement("option");
-                $option.id = e.id;
                 $option.value = e.valor;
                 $option.innerHTML = e.valor;
                 element.appendChild($option);
