@@ -1,64 +1,96 @@
 import {verificarInputs} from "./verificarInputs.js";
+import {mensajeModal} from "./mensajeModal.js";
+import {cargarTabla} from "./cargarTabla.js";
+
 
 export function altaRegistro(tipo) {
     if(tipo === "usuario") {
-        let $id = document.getElementById("id-usuario").value, 
-        $nombre= document.getElementById("nombre").value,
-        $email= document.getElementById("email").value,
-        $rol= document.getElementById("roles").options["selectedIndex"] + 1,
-        $contrasenia= document.getElementById("contrasenia").value,
+        let $nombre= document.getElementById("nombre"),
+        $email= document.getElementById("email"),
+        $rol= document.getElementById("roles"),
+        $contrasenia= document.getElementById("contrasenia"),
         datos = new FormData();
 
-        if($id == "" || $id == undefined || $id == " "){$id = "NULL"};
-       if(verificarInputs()) {
-        datos.append("tipo",tipo);
-        datos.append("id",$id);
-        datos.append("nombre",$nombre);
-        datos.append("email",$email);
-        datos.append("rol",$rol);
-        datos.append("contrasenia",$contrasenia);
+        if(verificarInputs($nombre,$email,$contrasenia)) {
+            datos.append("tipo",tipo);
+            datos.append("nombre",$nombre.value);
+            datos.append("email",$email.value);
+            datos.append("rol",$rol.options["selectedIndex"] + 1);
+            datos.append("contrasenia",$contrasenia.value);
             if(confirm("Seguro que quiere enviar el formulario de alta") == true) {
                 fetch("../scriptsPHP/altaRegistro.php", {
                     method: 'POST',
                     body: datos,
                     cache:"no-cache"
                 }) 
-                    .then(res => res.text() )
-                    .then(json => alert(json))
-                    .catch(error => console.error('Error: ', error))
+                .then(res =>  res.text())
+                .then(json => {
+                    if(json == "" || json == " ") {
+                        mensajeModal(false, "No se pudo realizar el INSERT en usuarios")
+                    }
+                    else {
+                        mensajeModal(true, json)
+                        cargarTabla("usuario");
+                        let $id = document.getElementById("id-usuario"); 
+                        $id.value = ""
+                        $nombre.value = ""
+                        $email.value = ""
+                        $contrasenia.value = ""
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                })
             }
        }
+       else {mensajeModal(false, "Verifique que los inputs esten bien cargados")}
+
     }
     else if(tipo === "libro") {
-        let $id = document.getElementById("id-libro").value, 
-        $titulo= document.getElementById("titulo").value,
-        $autor= document.getElementById("autor").options["selectedIndex"] + 1,
-        $genero= document.getElementById("genero").options["selectedIndex"] + 1,
-        $saga= document.getElementById("saga").value,
-        $paginas= document.getElementById("paginas").value,
-        $descripcion= document.getElementById("descripcion").value,
+        let $titulo= document.getElementById("titulo"),
+        $autor= document.getElementById("autor"),
+        $genero= document.getElementById("genero"),
+        $saga= document.getElementById("saga"),
+        $paginas= document.getElementById("paginas"),
+        $descripcion= document.getElementById("descripcion"),
         datos = new FormData();
-        if($id == "" || $id == undefined || $id == " "){$id = "NULL"};
-       if(verificarInputs()) {
-        datos.append("tipo",tipo);
-        datos.append("id",$id);
-        datos.append("titulo",$titulo);
-        datos.append("autor",$autor);
-        datos.append("genero",$genero);
-        datos.append("saga",$saga);
-        datos.append("paginas",$paginas);
-        datos.append("descripcion",$descripcion);
+
+        if(verificarInputs($titulo,$saga,$paginas,$descripcion)) {
+            datos.append("tipo",tipo);
+            datos.append("titulo",$titulo.value);
+            datos.append("autor",$autor.options["selectedIndex"] + 1);
+            datos.append("genero",$genero.options["selectedIndex"] + 1);
+            datos.append("saga",$saga.value);
+            datos.append("paginas",$paginas.value);
+            datos.append("descripcion",$descripcion.value);
             if(confirm("Seguro que quiere enviar el formulario de alta") == true) {
                 fetch("../scriptsPHP/altaRegistro.php", {
                     method: 'POST',
                     body: datos,
                     cache:"no-cache"
                 }) 
-                    .then(res => res.text() )
-                    .then(json => alert(json))
-                    .catch(error => console.error('Error: ', error))
+                    .then(res =>  res.text())
+                    .then(json => {
+                        if(json == "" || json == " ") {
+                            mensajeModal(false, "No se pudo realizar el INSERT en libros")
+                        }
+                        else {
+                            mensajeModal(true, json)
+                            cargarTabla("libro");
+                            let $id = document.getElementById("id-libro");
+                            $id.value = "" 
+                            $titulo.value = ""
+                            $saga.value = "" 
+                            $paginas.value = "" 
+                            $descripcion.value = "" 
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    })
             }
        }
+       else {mensajeModal(false, "Verifique que los inputs esten bien cargados")}
+
     }
-    console.log(tipo)
 }

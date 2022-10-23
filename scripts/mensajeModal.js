@@ -19,7 +19,7 @@ export function mensajeModal(estado, mensaje, detalle = undefined) {
     $mensaje.innerText = mensaje;
     $boton.innerHTML = "Cerrar";
     $boton.onclick = ()=> {
-        $mensajeAEliminar = document.getElementById("seccion-mensaje");
+        let $mensajeAEliminar = document.getElementById("seccion-mensaje");
         $body.removeChild($mensajeAEliminar);
     }
     $botonContenedor.appendChild($boton);
@@ -58,4 +58,5 @@ export function mensajeModal(estado, mensaje, detalle = undefined) {
     $article.appendChild($botonContenedor);
     $section.appendChild($article);
     $body.appendChild($section);
+
 }

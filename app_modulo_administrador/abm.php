@@ -33,21 +33,21 @@
                         </div>
                         <div class="formABM-input">
                             <label for="nombre">Nombre de Usuario</label>
-                            <input type="text" id="nombre" name="nombre">
+                            <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="40" pattern="[A-Za-z0-9]+" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40">
                         </div>
 
                         <div class="formABM-input">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
                         </div>
                         <div class="formABM-input">
                             <label for="roles">Rol</label>
-                            <select name="roles" id="roles">
+                            <select name="roles" id="roles" required>
                             </select>
                         </div>
                         <div class="formABM-input">
                             <label for="contrasenia">Contraseña</label>
-                            <input type="contrasenia" id="contrasenia" name="contrasenia">
+                            <input type="contrasenia" id="contrasenia" name="contrasenia" required minlength="8" maxlength="32" title="Tamaño mínimo: 8. Tamaño máximo: 32">
                         </div>
                         <div class="formABM-botones">
                             <input type="submit" value="Alta" id="alta-usuario">
@@ -95,27 +95,27 @@
                         </div>
                         <div class="formABM-input">
                             <label for="titulo">Titulo</label>
-                            <input type="text" id="titulo" name="titulo">
+                            <input type="text" id="titulo" name="titulo" required minlength="5" maxlength="40">
                         </div>
                         <div class="formABM-input">
                             <label for="autor">Autor</label>
-                            <select name="autor" id="autor"></select>
+                            <select name="autor" id="autor" required></select>
                         </div>
                         <div class="formABM-input">
                             <label for="genero">Genero</label>
-                            <select name="genero" id="genero"></select>
+                            <select name="genero" id="genero" required></select>
                         </div>
                         <div class="formABM-input">
                             <label for="saga">Saga</label>
-                            <input type="text" id="saga" name="saga">
+                            <input type="text" id="saga" name="saga" required minlength="5" maxlength="40">
                         </div>
                         <div class="formABM-input">
                             <label for="paginas">Paginas</label>
-                            <input type="number" id="paginas" name="paginas">
+                            <input type="text" id="paginas" name="paginas" required>
                         </div>
                         <div class="formABM-textarea">
                             <label for="descripcion">Descripcion</label>
-                            <textarea name="descripcion" id="descripcion"></textarea>
+                            <textarea name="descripcion" id="descripcion" required pattern="[A-Za-z0-9]+"></textarea>
                         </div>
 
                         <div class="formABM-botones">

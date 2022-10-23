@@ -1,10 +1,10 @@
 <?php
     include("scriptsPHP/manejoSesion.inc");
 
-    if($_SESSION['rol'] == 1) {
+    if($_SESSION['rol'] == 2) {
         header('Location:app_modulo_usuario/menu/index.php');
     }
-    else if($_SESSION['rol'] == 2){
+    else if($_SESSION['rol'] == 1){
         header('Location:app_modulo_administrador/index.php');
     }
     exit();
