@@ -1,5 +1,5 @@
 /* ***** Custom properties ***** */
-:root{
+:root {
     --first-light-color: #D9A25F;
     --first-dark-color: #BF8F54;
     --background-color-oscuro: #2F2F2F;
@@ -13,6 +13,6 @@
     color: var(--text-color-white);
 }
 
-body.dark label{
+body.dark label {
     color: var(--text-color-white);
 }

@@ -1,5 +1,5 @@
 /* ***** Custom properties ***** */
-:root{
+:root {
     --first-light-color: #D9A25F;
     --first-dark-color: #BF8F54;
     --background-color: #F6F6F6;
@@ -17,7 +17,7 @@
 }
 
 /* ***** Reset ***** */
-html{
+html {
     box-sizing: border-box;
     font-family: var(--font);
     font-size: 16px;
@@ -26,11 +26,11 @@ html{
 
 *,
 *::after,
-*::before{
+*::before {
     box-sizing: inherit;
 }
 
-body{
+body {
     margin: 0;
     overflow-x: hidden;
     color: var(--text-color-black);
@@ -41,12 +41,12 @@ body{
     position: relative;
 }
 
-a{
+a {
     color: var(--text-color);
     transition: all 0.5s ease-out;
 }
 
-a:hover{
+a:hover {
     color: var(--first-dark-color);
 }
 
@@ -86,7 +86,7 @@ h6 {
     font-weight: 400;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }

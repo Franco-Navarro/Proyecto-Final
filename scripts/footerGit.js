@@ -14,6 +14,6 @@ export function footer() {
     <p><small>Copyright 2022 Kindlen't Inc</small></p>
     </div>`;
 
-return $footer;
+    return $footer;
 
 }

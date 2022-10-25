@@ -1,34 +1,34 @@
 
 const $perfil = document.getElementById("seccion-perfil"),
-$comentario = document.getElementById("seccion-comentario"),
-$seccionTarjeta = document.getElementById("seccion-tarjeta"),
-$seccionSuscripcion = document.getElementById("seccion-suscripcion"),
-$botonVolver = document.getElementById("registro-salir"),
-$numero = document.getElementById("numero-tarjeta"),
-$nombre = document.getElementById("nombre-tarjeta"),
-$fecha = document.getElementById("fecha-tarjeta"),
-$codigo = document.getElementById("codigo-tarjeta"),
-$dni = document.getElementById("dni-tarjeta"),
-$tarjetaNumero = document.getElementById("mostrar-numeros"),
-$tarjetaNombre = document.getElementById("mostrar-nombre"),
-$tarjetaFecha = document.getElementById("mostrar-fecha"),
-datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null },
-$botonEnviarMail = document.getElementById("enviar-mail");
+    $comentario = document.getElementById("seccion-comentario"),
+    $seccionTarjeta = document.getElementById("seccion-tarjeta"),
+    $seccionSuscripcion = document.getElementById("seccion-suscripcion"),
+    $botonVolver = document.getElementById("registro-salir"),
+    $numero = document.getElementById("numero-tarjeta"),
+    $nombre = document.getElementById("nombre-tarjeta"),
+    $fecha = document.getElementById("fecha-tarjeta"),
+    $codigo = document.getElementById("codigo-tarjeta"),
+    $dni = document.getElementById("dni-tarjeta"),
+    $tarjetaNumero = document.getElementById("mostrar-numeros"),
+    $tarjetaNombre = document.getElementById("mostrar-nombre"),
+    $tarjetaFecha = document.getElementById("mostrar-fecha"),
+    datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null },
+    $botonEnviarMail = document.getElementById("enviar-mail");
 
 
-document.getElementById("comentario").addEventListener("click", (e)=> {
+document.getElementById("comentario").addEventListener("click", (e) => {
     e.preventDefault();
     $perfil.classList.add("none");
     $comentario.classList.remove("none");
 })
 
-document.getElementById("seccion-comentario-volver").addEventListener("click", (e)=> {
+document.getElementById("seccion-comentario-volver").addEventListener("click", (e) => {
     e.preventDefault();
     $perfil.classList.remove("none");
     $comentario.classList.add("none");
 })
 
-document.getElementById("cambiar-suscripcion").addEventListener("click", (e)=> {
+document.getElementById("cambiar-suscripcion").addEventListener("click", (e) => {
     e.preventDefault();
     $botonVolver.classList.remove("none");
     $comentario.classList.add("none");
@@ -37,7 +37,7 @@ document.getElementById("cambiar-suscripcion").addEventListener("click", (e)=> {
     $perfil.classList.add("none");
 })
 
-$botonVolver.onclick = (e)=> {
+$botonVolver.onclick = (e) => {
     e.preventDefault();
     $botonVolver.classList.add("none");
     $comentario.classList.add("none");
@@ -46,22 +46,22 @@ $botonVolver.onclick = (e)=> {
     $perfil.classList.remove("none");
 }
 
-document.getElementById("suscripcion-gratuita").addEventListener("click", ()=> {
+document.getElementById("suscripcion-gratuita").addEventListener("click", () => {
     //datosRegistro.tipoSuscripcion = 1;
     registrarUsuario(datosRegistro);
 })
 
-document.getElementById("suscripcion-premium").addEventListener("click", ()=> {
+document.getElementById("suscripcion-premium").addEventListener("click", () => {
     //datosRegistro.tipoSuscripcion = 2;
     $seccionTarjeta.classList.toggle("none");
     $seccionSuscripcion.classList.toggle("none");
 })
 
 // CARGA LOS DATOS DEL FORM REGISTRO AL OBJETO DATOSREGISTRO
-document.getElementById("tarjeta-boton").addEventListener("click", (e)=> {
+document.getElementById("tarjeta-boton").addEventListener("click", (e) => {
     e.preventDefault();
 
-    if(verificarDatos($nombre,$numero,$fecha,$codigo,$dni)) {
+    if (verificarDatos($nombre, $numero, $fecha, $codigo, $dni)) {
         // LA EXPRESION / /g ELIMINA LOS ESPACIOS EN BLANCO 
         datosTarjeta.numero = $numero.value.replace(/ /g, "");
         datosTarjeta.nombre = $nombre.value;
@@ -89,36 +89,36 @@ function registrarTarjeta(datosTarjeta) {
     datos.append("contraseña", datosRegistro.contraseña);
     datos.append("email", datosRegistro.email);
     datos.append("tipoSuscripcion", datosRegistro.tipoSuscripcion);
-    
+
     fetch("../scriptsPHP/registrar.php", {
         method: 'POST',
         body: datos
-    }) 
-        .then(res => res.text() )
+    })
+        .then(res => res.text())
         .then(json => alert(json))
         .catch(error => console.error('Error: ', error))
-        /*.finally(()=> {
-            $modalRegs.classList.add("none");
-            $modalLogin.classList.remove("none");
-        })*/
+    /*.finally(()=> {
+        $modalRegs.classList.add("none");
+        $modalLogin.classList.remove("none");
+    })*/
 }
 
 // MUESTREO DE DATOS DE TARJETA INGRESADOS
-$numero.addEventListener("keyup", ()=> {
-    if($numero.value == ""){
+$numero.addEventListener("keyup", () => {
+    if ($numero.value == "") {
         $tarjetaNumero.innerText = "**** **** **** ****"
     }
-    else if($numero.value.length <= $numero.max){
-        if($numero.value.length === 4) {
+    else if ($numero.value.length <= $numero.max) {
+        if ($numero.value.length === 4) {
             $numero.value = $numero.value + " ";
-            
+
         }
 
-        if($numero.value.length === 9) {
+        if ($numero.value.length === 9) {
             $numero.value = $numero.value + " ";
         }
 
-        if($numero.value.length === 14) {
+        if ($numero.value.length === 14) {
             $numero.value = $numero.value + " ";
         }
         $tarjetaNumero.innerText = $numero.value;
@@ -128,11 +128,11 @@ $numero.addEventListener("keyup", ()=> {
     }
 })
 
-$nombre.addEventListener("keyup", ()=> {
-    if($nombre.value == ""){
+$nombre.addEventListener("keyup", () => {
+    if ($nombre.value == "") {
         $tarjetaNombre.innerText = "Nombre y Apellido"
     }
-    else if($nombre.value.length <= $nombre.max){
+    else if ($nombre.value.length <= $nombre.max) {
         $tarjetaNombre.innerText = $nombre.value.toUpperCase();
     }
     else {
@@ -140,14 +140,14 @@ $nombre.addEventListener("keyup", ()=> {
     }
 })
 
-$fecha.addEventListener("keyup", ()=> {
-    if($fecha.value == ""){
+$fecha.addEventListener("keyup", () => {
+    if ($fecha.value == "") {
         $tarjetaFecha.innerText = "MM/AA"
     }
-    else if($fecha.value.length <= $fecha.max){
-        if($fecha.value.length === 2) {
+    else if ($fecha.value.length <= $fecha.max) {
+        if ($fecha.value.length === 2) {
             $fecha.value = $fecha.value + "/";
-            
+
         }
 
         $tarjetaFecha.innerText = $fecha.value;
@@ -157,30 +157,30 @@ $fecha.addEventListener("keyup", ()=> {
     }
 })
 
-import {navegador} from "../../scripts/navUser.js";
-import {header} from "../../scripts/headerBuscador.js";
-import {footer} from "../../scripts/footerGit.js";
+import { navegador } from "../../scripts/navUser.js";
+import { header } from "../../scripts/headerBuscador.js";
+import { footer } from "../../scripts/footerGit.js";
 import { enviarMail } from "../../scripts/enviarMail.js";
 
 
 let $body = document.getElementById("body"),
-$main = document.getElementById("main"),
-$contenedor = document.getElementById("tarjeta-container"),
-$navegador = navegador(),
-$header = header(),
-$footer = footer();
+    $main = document.getElementById("main"),
+    $contenedor = document.getElementById("tarjeta-container"),
+    $navegador = navegador(),
+    $header = header(),
+    $footer = footer();
 
 $body.insertBefore($header, $main)
 $body.appendChild($footer);
 $body.appendChild($navegador);
 
 
-$botonEnviarMail.addEventListener("click", (e)=> {
+$botonEnviarMail.addEventListener("click", (e) => {
     e.preventDefault()
     let nombre = document.getElementById("comentario-nombre").value,
-    email = document.getElementById("comentario-email").value,
-    comentario = document.getElementById("comentario-comentario").value;
+        email = document.getElementById("comentario-email").value,
+        comentario = document.getElementById("comentario-comentario").value;
 
-    enviarMail(nombre,email,comentario);
+    enviarMail(nombre, email, comentario);
 })
 

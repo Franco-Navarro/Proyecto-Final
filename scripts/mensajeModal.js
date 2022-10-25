@@ -1,12 +1,12 @@
 export function mensajeModal(estado, mensaje, detalle = undefined) {
     let $body = document.getElementById("body"),
-    $section = document.createElement("section"),
-    $article = document.createElement("article"),
-    $estadoContenedor = document.createElement("div"),
-    $mensajeContenedor = document.createElement("div"),
-    $botonContenedor = document.createElement("div"),
-    $boton = document.createElement("button"),
-    $mensaje = document.createElement("h4");
+        $section = document.createElement("section"),
+        $article = document.createElement("article"),
+        $estadoContenedor = document.createElement("div"),
+        $mensajeContenedor = document.createElement("div"),
+        $botonContenedor = document.createElement("div"),
+        $boton = document.createElement("button"),
+        $mensaje = document.createElement("h4");
 
 
     $section.classList.add("mensaje-seccion");
@@ -18,13 +18,13 @@ export function mensajeModal(estado, mensaje, detalle = undefined) {
 
     $mensaje.innerText = mensaje;
     $boton.innerHTML = "Cerrar";
-    $boton.onclick = ()=> {
+    $boton.onclick = () => {
         let $mensajeAEliminar = document.getElementById("seccion-mensaje");
         $body.removeChild($mensajeAEliminar);
     }
     $botonContenedor.appendChild($boton);
 
-    if(estado === true) {
+    if (estado === true) {
         const $mensajeEstado = document.createElement("div");
         $mensajeEstado.classList.add("mensaje-estado-ok");
         $mensajeEstado.innerHTML = '<svg width="20" height="16" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg"><path d="M0 6L2.4 3.6L7.2 8.4L15.6 0L18 2.4L7.2 13.2L0 6Z" /></svg>';
@@ -39,9 +39,9 @@ export function mensajeModal(estado, mensaje, detalle = undefined) {
         $estadoContenedor.appendChild($mensaje);
     }
 
-    if(detalle != undefined) {
+    if (detalle != undefined) {
         const $mensajeDetalle = document.createElement("div"),
-        $detalle = document.createElement("p");
+            $detalle = document.createElement("p");
         $detalle.innerText = detalle;
         $mensajeDetalle.appendChild($detalle);
         $mensajeDetalle.classList.add("mensaje-detalle");

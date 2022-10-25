@@ -7,8 +7,8 @@ export function enviarMail(nombre, email, comentario) {
     fetch("../../scriptsPHP/enviarComentario.php", {
         method: 'POST',
         body: datos
-    }) 
-        .then(res => res.text() )
+    })
+        .then(res => res.text())
         .then(json => console.log(json))
         .catch(error => console.error('Error: ', error))
 }

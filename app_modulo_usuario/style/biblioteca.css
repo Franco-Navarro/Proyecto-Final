@@ -1,5 +1,4 @@
-
-.main{
+.main {
     padding: 64px 0 32px 128px;
     min-height: 100vh;
 }
@@ -35,7 +34,7 @@
     }
 
     .main {
-        padding:0;
+        padding: 0;
         padding-top: 4rem;
     }
 

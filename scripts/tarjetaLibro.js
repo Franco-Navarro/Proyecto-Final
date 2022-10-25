@@ -1,18 +1,19 @@
-import {detalleLibro} from "./detalleLibro.js";
+import { detalleLibro } from "./detalleLibro.js";
 
 
 export function tarjetaLibro(json) {
     let portada = json['portada'],
-    titulo = json['titulo'].replace(/_/g, " "),
-    autor = json['autor'],
-    descripcion = json['descripcion'],
-    $tarjeta = document.createElement("article");
+        titulo = json['titulo'],
+        autor = json['autor'],
+        descripcion = json['descripcion'],
+        $tarjeta = document.createElement("article");
 
     $tarjeta.classList.add("tarjeta-libro");
-    $tarjeta.onclick = ()=> {
-        location.hash = json['titulo'];
+    $tarjeta.onclick = () => {
+        let hashTitulo = json['titulo'].replace(/ /g, "_");
+        location.hash = hashTitulo.toLowerCase();
         detalleLibro(json);
-    } 
+    }
 
     let tarjetaContenido = `<div class="tarjeta-libro-contenedor">
                             <img class="tarjeta-libro-portada" src="${portada}" alt="portada de ejemplo">

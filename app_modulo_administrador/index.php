@@ -1,5 +1,4 @@
 <?php
-    include("../scriptsPHP/manejoSesion.inc");
-    header('Location:abm.php');
-    exit();
-?>
+include("../scriptsPHP/manejoSesion.inc");
+header('Location:abm.php');
+exit();

@@ -1,10 +1,8 @@
-
-
 .seccion-inicio {
     width: 100%;
 }
 
-.inicio-contenido{
+.inicio-contenido {
     width: 100%;
     display: flex;
     gap: 2rem 1rem;
@@ -27,6 +25,7 @@
     .main {
         padding: 4rem 1rem 1rem 4rem;
     }
+
     .seccion-inicio {
         width: 100%;
     }
@@ -41,12 +40,12 @@
     }
 
     .main {
-        padding:0;
+        padding: 0;
         padding-top: 4rem;
         padding-bottom: 1rem;
     }
 
-    .seccion-inicio-titulo{
+    .seccion-inicio-titulo {
         font-size: 28px;
     }
 

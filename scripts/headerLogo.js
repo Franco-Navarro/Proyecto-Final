@@ -5,6 +5,6 @@ export function header() {
 
     $header.innerHTML = `<div class="header-logo"><a href="index.php">${logo}</a></div>`;
 
-return $header;
+    return $header;
 
 }
