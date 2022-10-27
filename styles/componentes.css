@@ -1,8 +1,19 @@
 .main {
-    padding: 64px 64px 128px 128px;
+    padding: 64px 0px 4rem 128px;
     min-height: 95vh;
 }
-
+@media screen and (max-width: 512px) {
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .main {
+        padding: 64px 0px 4rem 0px;
+        min-height: 95vh;
+    }
+}
 /* HEADER */
 
 .header {
@@ -136,6 +147,12 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    
+    .header-buscador {
+        min-width: 300px;
+    }
+}
 /* NAVEGADOR */
 
 .navegador {
@@ -384,8 +401,12 @@
         box-shadow: none;
     }
 
+    .tarjeta-libro-contenedor img {
+        max-height: none;
+    }
+
     .tarjeta-libro-portada {
-        width: 130px;
+        width: 80%;
         margin: auto;
     }
 
@@ -398,6 +419,7 @@
         background-color: var(--first-light-color);
         border-radius: 0 0 8px 8px;
         position: relative;
+        display: none;
     }
 
     .tarjeta-libro-contenido::before {
@@ -562,6 +584,16 @@
     margin: 1rem;
 }
 
+.libro-detalle-favorito-boton {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 .libro-detalle-volver-boton {
     background-color: transparent;
@@ -651,6 +683,10 @@
 
     .libro-detalle-contenido {
         margin: 1rem 0;
+    }
+    
+    .header-buscador {
+        min-width: 300px;
     }
 }
 
