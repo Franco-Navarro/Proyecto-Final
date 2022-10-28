@@ -64,3 +64,9 @@ function registrarUsuario(datosRegistro) {
         $modalLogin.classList.remove("none");
     })*/
 }
+
+
+
+document.getElementById("cerrarDescripcionModal").addEventListener("click", (e)=> {
+    document.getElementById("cerrarDescripcionModal").parentNode.remove();
+})

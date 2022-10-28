@@ -35,16 +35,9 @@ cargarSelect($selectAutores, "autores", "nombre");
 cargarSelect($selectGeneros, "generos", "nombre");
 cargarSelect($selectRoles, "roles", "rol");
 
-$tablaLibro.addEventListener("click", () => {
-    cargarTabla("libro")
-});
+$tablaLibro.addEventListener("click", () => cargarTabla("libro"));
 
-$tablaUsuario.addEventListener("click", () => {
-    cargarTabla("usuario")
-});
-
-cargarTabla("usuario");
-cargarTabla("libro");
+$tablaUsuario.addEventListener("click", () => cargarTabla("usuario"));
 
 $vaciarTablaLibro.addEventListener("click", () => {
     let $tabla = document.getElementById("tabla-cuerpo-libro")
@@ -140,7 +133,8 @@ $botonBuscar.addEventListener("click", (e)=> {
     }
 })
 
-
+cargarTabla("usuario");
+cargarTabla("libro");
 $body.appendChild($footer);
 $body.appendChild($navegadorAdmin);
 

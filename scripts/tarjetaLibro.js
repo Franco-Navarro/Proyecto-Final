@@ -2,10 +2,14 @@ import { detalleLibro } from "./detalleLibro.js";
 
 
 export function tarjetaLibro(json) {
-    let portada = json['portada'],
-        titulo = json['titulo'],
+    let titulo = json['titulo'],
         autor = json['autor'],
         descripcion = json['descripcion'],
+        paginas = json['paginas'],
+        saga = json['saga'],
+        id = json['id'],
+        portada = json['portada'].replace(/ /g, "_"),
+        pdf = json['pdf'].replace(/ /g, "_"),
         $tarjeta = document.createElement("article");
 
     $tarjeta.classList.add("tarjeta-libro");
@@ -16,7 +20,7 @@ export function tarjetaLibro(json) {
     }
 
     let tarjetaContenido = `<div class="tarjeta-libro-contenedor">
-                            <img class="tarjeta-libro-portada" src="${portada}" alt="portada de ejemplo">
+                            <img class="tarjeta-libro-portada" src="${portada.toLowerCase()}" alt="portada de ejemplo">
                             <div class="tarjeta-libro-contenido">
                                 <h4 class="tarjeta-libro-titulo">${titulo.toUpperCase()}</h4>
                                 <small class="tarjeta-libro-autor">${autor}</small>

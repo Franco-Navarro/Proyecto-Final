@@ -592,3 +592,43 @@ p {
    margin: 0;
    padding-left: 1rem;
 }
+
+.descripcionModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 999999;
+   background-color: var(--background-color-dark);
+   backdrop-filter: blur(5px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   color: var(--background-color);
+}
+
+
+.descripcionModal button{
+   width: 120px;
+   height: 2rem;
+   background-color: var(--first-light-color);
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   font-family: var(--font);
+   cursor: pointer;
+   transition: background 0.3s;
+   box-shadow: var(--box-shadow);
+   margin-top: 1rem;
+}
+
+.descripcionModal button:hover{
+   background-color: var(--first-dark-color);
+}
+
+
+.descripcionModal h3{
+   max-width: 80%;
+}
