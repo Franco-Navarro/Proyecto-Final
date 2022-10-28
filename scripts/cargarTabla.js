@@ -1,10 +1,13 @@
 import { crearTabla } from "./tablaABM.js"
 
-const $cargando = document.getElementById("cargando-contenedor");
+const $cargando = document.getElementById("cargando-contenedor"),
+    $input = document.getElementById("buscador-input");
+
 export function cargarTabla(tipo) {
     const datos = new FormData();
     datos.append("tipo", tipo);
-    $cargando.classList.remove("none");
+    datos.append("valor", $input.value);
+    //$cargando.classList.remove("none");
 
     fetch("../scriptsPHP/selectTablas.php", {
         method: 'POST',

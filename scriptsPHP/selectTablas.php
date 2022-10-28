@@ -2,9 +2,28 @@
 include("conexion.inc");
 $array = [];
 $tipo = $_POST["tipo"];
+$valor = isset($_POST['valor']) ? mysqli_real_escape_string($conexion, $_POST['valor']) : null;
+
 
 if ($tipo == "libro") {
-    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero");
+    $columnas = ['libros.id_libro', 'libros.titulo','libros.saga','autores.nombre','generos.nombre'];
+
+    $filtro = '';
+
+    if ($valor != null) {
+        $cantidad = count($columnas);
+        $filtro = '(';
+        for ($i = 0; $i < $cantidad; $i++) {
+            $filtro = $filtro . $columnas[$i] . " LIKE '%" . $valor . "%' OR ";
+        }
+        $filtro = substr_replace($filtro, "", -3);
+        $filtro = $filtro . ")";
+        $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND " . $filtro);
+    }
+    else {
+        $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero");
+    }
+
     $cant_filas = mysqli_num_rows($resultado);
     $fila = mysqli_fetch_assoc($resultado);
     $obj = new stdClass();
@@ -27,8 +46,26 @@ if ($tipo == "libro") {
     mysqli_free_result($resultado);
     mysqli_close($conexion);
     echo json_encode($array);
+
 } else if ($tipo == "usuario") {
-    $resultado = mysqli_query($conexion, "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.email, roles.rol, usuarios.contrasenia FROM usuarios, roles WHERE usuarios.fk_rol = roles.id_rol;");
+    $columnas = ['usuarios.id_usuario', 'usuarios.nombre','usuarios.email','roles.rol'];
+
+    $filtro = '';
+
+    if ($valor != null) {
+        $cantidad = count($columnas);
+        $filtro = '(';
+        for ($i = 0; $i < $cantidad; $i++) {
+            $filtro = $filtro . $columnas[$i] . " LIKE '%" . $valor . "%' OR ";
+        }
+        $filtro = substr_replace($filtro, "", -3);
+        $filtro = $filtro . ")";
+        $resultado = mysqli_query($conexion, "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.email, roles.rol, usuarios.contrasenia FROM usuarios, roles WHERE usuarios.fk_rol = roles.id_rol AND " . $filtro);
+    }
+    else {
+        $resultado = mysqli_query($conexion, "SELECT usuarios.id_usuario, usuarios.nombre, usuarios.email, roles.rol, usuarios.contrasenia FROM usuarios, roles WHERE usuarios.fk_rol = roles.id_rol;");
+    }
+
     $cant_filas = mysqli_num_rows($resultado);
     $fila = mysqli_fetch_assoc($resultado);
     $obj = new stdClass();

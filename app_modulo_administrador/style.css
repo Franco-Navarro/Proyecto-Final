@@ -369,3 +369,6 @@
       grid-column: span 1;
    }
 }
+.header-buscador-barra-input {
+   padding: 0 1rem;
+}

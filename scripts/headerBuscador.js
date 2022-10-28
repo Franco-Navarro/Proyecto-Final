@@ -1,3 +1,4 @@
+
 export function header() {
     let $header = document.createElement("header"),
         $aside = buscador(),
@@ -23,19 +24,19 @@ function buscador() {
     $filtro.innerHTML = `<ul class="header-buscador-filtro-lista " id="buscador-filtro-lista">
         <li>
             <label for="autor">Autor</label>
-            <input type="checkbox" name="autor" id="autor">
+            <input type="checkbox" checked name="autor" id="autor">
         </li>
         <li>
             <label for="genero">Genero</label>
-            <input type="checkbox" name="genero" id="genero">
+            <input type="checkbox" checked name="genero" id="genero">
         </li>
         <li>
             <label for="titulo">Titulo</label>
-            <input type="checkbox" name="titulo" id="titulo">
+            <input type="checkbox" checked name="titulo" id="titulo">
         </li>
         <li>
             <label for="gratis">Gratuito</label>
-            <input type="checkbox" name="gratis" id="gratis">
+            <input type="checkbox" checked name="gratis" id="gratis">
         </li>
     </ul>`
     $botonFiltro.classList.add("header-buscador-filtro-boton");
@@ -61,5 +62,5 @@ function buscador() {
 }
 
 function buscar() {
-
+    console.log("buscando")
 }

@@ -1,5 +1,4 @@
 import { navegadorAdmin } from "../scripts/navAdmin.js"
-import { header } from "../scripts/headerBuscador.js";
 import { footer } from "../scripts/footerGit.js";
 import { cargarTabla } from "../scripts/cargarTabla.js";
 import { cargarSelect } from "../scripts/cargarSelect.js";
@@ -14,7 +13,6 @@ let $body = document.getElementById("body"),
     $vaciarTablaLibro = document.getElementById("vaciar-tabla-libro"),
     $vaciarTablaUsuario = document.getElementById("vaciar-tabla-usuario"),
     $navegadorAdmin = navegadorAdmin(),
-    $header = header(),
     $footer = footer(),
     $selectRoles = document.getElementById("roles"),
     $selectAutores = document.getElementById("autor"),
@@ -29,6 +27,8 @@ let $body = document.getElementById("body"),
     $botonCargaArchivo = document.getElementById("archivos-libro"),
     $botonAltaRol = document.getElementById("insert-rol"),
     $botonAltaAutor = document.getElementById("insert-autor"),
+    $botonBuscar = document.getElementById("boton-buscar"),
+    $inputBuscar = document.getElementById("buscador-input"),
     $botonAltaGenero = document.getElementById("insert-genero");
 
 cargarSelect($selectAutores, "autores", "nombre");
@@ -120,7 +120,27 @@ $botonAltaGenero.addEventListener("click", (e)=> {
 })
 
 
-$body.appendChild($header);
+$botonBuscar.addEventListener("click", (e)=> {
+    e.preventDefault()
+    if(window.location.hash == "#usuario") {
+        cargarTabla("usuario")
+    }
+    else if (window.location.hash == "#libro") {
+        cargarTabla("libro")
+    }
+})
+
+ $inputBuscar.addEventListener("keyup", ()=> {
+    if(window.location.hash == "#usuario") {
+     cargarTabla("usuario")
+
+    }
+    else if (window.location.hash == "#libro") {
+     cargarTabla("libro")
+    }
+})
+
+
 $body.appendChild($footer);
 $body.appendChild($navegadorAdmin);
 

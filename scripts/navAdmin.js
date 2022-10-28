@@ -59,6 +59,8 @@ function lista() {
 
         $mainLibro.classList.remove("none");
         $mainUsuario.classList.add("none");
+        window.location.hash = "libro"
+
     }
 
     usuario.innerHTML = `<div>
@@ -70,6 +72,7 @@ function lista() {
 
         $mainLibro.classList.add("none");
         $mainUsuario.classList.remove("none");
+        window.location.hash = "usuario"
     }
 
 
