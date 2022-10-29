@@ -1,7 +1,7 @@
 export function detalleLibro(json) {
     let $main = document.getElementById("main"),
         $tarjetaContainer = document.getElementById("tarjeta-container"),
-        portada = json['portada'],
+        portada = json['portada'].replace(/ /g, "_"),
         titulo = json['titulo'].replace(/_/g, " "),
         autor = json['autor'],
         descripcion = json['descripcion'],
@@ -54,7 +54,7 @@ export function detalleLibro(json) {
     $detalle.appendChild($buttonAbrir);
 
     $contenedor.classList.add("libro-detalle-contenedor");
-    $contenedor.innerHTML = `<img class="tarjeta-libro-portada" src="${portada}" alt="portada de ejemplo">`
+    $contenedor.innerHTML = `<img class="tarjeta-libro-portada" src="${portada.toLowerCase()}" alt="portada de ejemplo">`
     $contenedor.appendChild($detalle);
 
     $article.appendChild($buttonVolver);

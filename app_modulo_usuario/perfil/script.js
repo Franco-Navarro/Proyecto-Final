@@ -158,19 +158,16 @@ $fecha.addEventListener("keyup", () => {
 })
 
 import { navegador } from "../../scripts/navUser.js";
-import { header } from "../../scripts/headerBuscador.js";
 import { footer } from "../../scripts/footerGit.js";
 import { enviarMail } from "../../scripts/enviarMail.js";
 
 
 let $body = document.getElementById("body"),
     $main = document.getElementById("main"),
-    $contenedor = document.getElementById("tarjeta-container"),
     $navegador = navegador(),
-    $header = header(),
     $footer = footer();
 
-$body.insertBefore($header, $main)
+$body.appendChild($main)
 $body.appendChild($footer);
 $body.appendChild($navegador);
 

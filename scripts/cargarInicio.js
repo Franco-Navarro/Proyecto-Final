@@ -3,14 +3,38 @@ import { tarjetaLibro } from "./tarjetaLibro.js";
 export function cargarInicio() {
 
     let $tarjeta,
-    $contenedor = document.getElementById("tarjeta-container"),
-    $body = document.getElementById("body"),
-    $main = document.getElementById("main");
+    $contenedor = document.createElement("section"),
+    $h1 = document.createElement("h1"),
+    datos = new FormData(),
+    autorFiltro = document.getElementById("autorFiltro"),
+    tituloFiltro = document.getElementById("tituloFiltro"),
+    generoFiltro = document.getElementById("generoFiltro"),
+    sagaFiltro = document.getElementById("sagaFiltro"),
+    inputBuscar = document.getElementById("buscador-input");
+    
+    if(autorFiltro.checked){
+        datos.append("autorFiltro", "autores.nombre");
+    }
+    if(tituloFiltro.checked){
+        datos.append("tituloFiltro","libros.titulo");
+    }
+    if(generoFiltro.checked){
+        datos.append("generoFiltro", "generos.nombre");
+    }
+    if(sagaFiltro.checked){
+        datos.append("sagaFiltro", "libros.saga");
+    }
+    datos.append("valor", inputBuscar.value);
 
+    $contenedor.classList.add("inicio-contenido");
+    $contenedor.id = "tarjeta-container";
+    $h1.classList.add("inicio-contenido-titulo");
+    $h1.innerHTML = "Todos los libros";
+    $contenedor.appendChild($h1);
 
     fetch("../../scriptsPHP/cargarInicio.php", {
         method: 'POST',
-        // body: datos
+        body: datos
     })
         .then(res => res.json())
         .then(json => {
@@ -23,6 +47,6 @@ export function cargarInicio() {
         .finally(()=> {
         })
 
-    $main.appendChild($contenedor);
-    $body.appendChild($main);
+    return $contenedor;
+
 }

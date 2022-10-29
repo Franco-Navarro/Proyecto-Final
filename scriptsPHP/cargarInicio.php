@@ -2,8 +2,24 @@
 include("conexion.inc");
 $array = [];
 $valor = isset($_POST['valor']) ? mysqli_real_escape_string($conexion, $_POST['valor']) : null;
+$autorFiltro = isset($_POST['autorFiltro']) ? mysqli_real_escape_string($conexion, $_POST['autorFiltro']) : null;
+$tituloFiltro = isset($_POST['tituloFiltro']) ? mysqli_real_escape_string($conexion, $_POST['tituloFiltro']) : null;
+$generoFiltro = isset($_POST['generoFiltro']) ? mysqli_real_escape_string($conexion, $_POST['generoFiltro']) : null;
+$sagaFiltro = isset($_POST['sagaFiltro']) ? mysqli_real_escape_string($conexion, $_POST['sagaFiltro']) : null;
+$columnas = [];
 
-$columnas = ['libros.id_libro', 'libros.titulo', 'libros.saga', 'autores.nombre', 'generos.nombre'];
+if($autorFiltro != null){
+    array_push($columnas, $autorFiltro);
+}
+if($tituloFiltro != null){
+    array_push($columnas, $tituloFiltro);
+}
+if($generoFiltro != null){
+    array_push($columnas, $generoFiltro);
+}
+if($sagaFiltro != null){
+    array_push($columnas, $sagaFiltro);
+}
 
 $filtro = '';
 
