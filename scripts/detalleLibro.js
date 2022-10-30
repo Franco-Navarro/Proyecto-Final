@@ -1,11 +1,12 @@
 export function detalleLibro(json) {
     let $main = document.getElementById("main"),
-        $tarjetaContainer = document.getElementById("tarjeta-container"),
+        $tarjetaContainer = document.querySelectorAll("#tarjeta-container"),
         portada = json['portada'].replace(/ /g, "_"),
         titulo = json['titulo'].replace(/_/g, " "),
         autor = json['autor'],
         descripcion = json['descripcion'],
         pdf = json['pdf'],
+        id = json['id'],
 
         $section = document.createElement("seccion"),
         $article = document.createElement("article"),
@@ -47,6 +48,10 @@ export function detalleLibro(json) {
         agregarFavorito(window.location.hash);
     }
 
+    $buttonFavorito.onclick = () => {
+        esFavorito(id);
+    }
+
     $detalle.classList.add("libro-detalle-contenido");
     $detalle.innerHTML = `<h2 class="libro-detalle-titulo">${titulo.toUpperCase()}</h2>
     <h3 class="libro-detalle-autor">${autor}</h3>
@@ -66,42 +71,81 @@ export function detalleLibro(json) {
     $section.classList.add("seccion-libro-detalle");
     $section.appendChild($article);
 
-    $tarjetaContainer.classList.add("none");
+    $tarjetaContainer.forEach(element => {
+        element.classList.add("none");
+    });
+
+    estaEnFavoritos(id);
+
     $main.appendChild($section);
-    estaEnFavoritos();
 
 }
-
 
 function volver(e) {
     let $main = document.getElementById("main"),
-        $tarjetaContainer = document.getElementById("tarjeta-container");
+        $tarjetaContainer = document.querySelectorAll("#tarjeta-container");
     $main.removeChild(e);
-    $tarjetaContainer.classList.remove("none");
+    $tarjetaContainer.forEach(element => {
+        element.classList.remove("none");
+    });
 }
 
-function estaEnFavoritos() {
-    let agregado = document.getElementById("favorito-agregado"),
-        noAgregado = document.getElementById("favorito-no-agregado"),
-        siEsta;
+function estaEnFavoritos(idLibroParametro) {
+    let data = new FormData();
+        data.append("id", idLibroParametro);
 
-    /*Este if tiene que estar en un fetch que compruebe si el libro ya esta en la lista de favoritos del usuario
-    pasandoselo al if para que cambie el icono*/
-    if(siEsta) {
-            agregado.classList.remove("none");
-            noAgregado.classList.add("none");
-    }
-    else {
-        agregado.classList.add("none");
-        noAgregado.classList.remove("none");
-    }
+    fetch("../../scriptsPHP/buscarFavorito.php", {
+        method: 'POST',
+        body: data
+    })
+        .then(response => response.text())
+        .then(json => {
+            if (json) {
+                let agregado = document.getElementById("favorito-agregado"),
+                noAgregado = document.getElementById("favorito-no-agregado");
+                
+                agregado.classList.remove("none");
+                noAgregado.classList.add("none");
+            } else {
+                let agregado = document.getElementById("favorito-agregado"),
+                noAgregado = document.getElementById("favorito-no-agregado");
+                
+                agregado.classList.add("none");
+                noAgregado.classList.remove("none");
+            }
+        });
 }
 
+function esFavorito(idLibroParametro) {
+    let data = new FormData();
+    data.append("id", idLibroParametro);
 
-function agregarFavorito(titulo) {
-    // Esta funcion tiene que comprobar si el libro esta en favoritos o no
-    // si esta hace un fetch para eliminarlo
-    // Y si no esta hace un fetch para agregarlo
-    // Y que al final haga un if como en estaEnFavoritos() para cambiar el icono
-    console.log(titulo);
+    fetch("../../scriptsPHP/buscarFavorito.php", {
+        method: 'POST',
+        body: data
+    })
+        .then(response => response.text())
+        .then(json => {
+            if (json) {
+                borrarFavorito(data);
+                estaEnFavoritos(idLibroParametro)
+            } else {
+                agregarFavorito(data)
+                estaEnFavoritos(idLibroParametro)
+            }
+        });
+}
+
+function agregarFavorito(data) {
+    fetch("../../scriptsPHP/agregarFavorito.php", {
+        method: 'POST',
+        body: data
+    });
+}
+
+function borrarFavorito(data) {
+    fetch("../../scriptsPHP/borrarFavorito.php", {
+        method: 'POST',
+        body: data
+    });
 }

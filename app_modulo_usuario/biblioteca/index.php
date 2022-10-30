@@ -67,12 +67,6 @@ include("../../scriptsPHP/manejoSesion.inc");
         </aside>
     </header>
     <main class="main" id="main">
-        <section class="seccion-biblioteca">
-            <h1 class="seccion-biblioteca-titulo">Tus Favoritos</h1>
-            <article class="biblioteca-detalle" id="tarjeta-container">
-
-            </article>
-        </section>
     </main>
 
 

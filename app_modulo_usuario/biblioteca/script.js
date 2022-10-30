@@ -1,15 +1,17 @@
 
 
 import { navegador } from "../../scripts/navUser.js";
-import { tarjetaLibro } from "../../scripts/tarjetaLibro.js";
+import { cargarFavoritos } from "../../scripts/cargarFavoritos.js";
 import { footer } from "../../scripts/footerGit.js";
 
 
 let $body = document.getElementById("body"),
     $main = document.getElementById("main"),
-    $contenedor = document.getElementById("tarjeta-container"),
+    $contenedor = cargarFavoritos(),
     $navegador = navegador(),
     $footer = footer();
+
+
 
 
 $main.appendChild($contenedor);

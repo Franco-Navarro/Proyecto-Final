@@ -4,10 +4,13 @@
 }
 
 .seccion-biblioteca-titulo {
-    margin: 1rem;
+    display: block;
+    margin: 1rem 1rem 0 1rem;
+    width: 100%;
 }
 
 .biblioteca-detalle {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

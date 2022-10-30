@@ -25,6 +25,7 @@ function autenticacion($log, $pas)
     if ($fila['contrasenia'] == $pas) {
         $aceptado = true;
         $_SESSION['rol'] = $fila['fk_rol'];
+        $_SESSION['idUsuario'] = $fila['id_usuario'];
     } else {
         $aceptado =  false;
     }
