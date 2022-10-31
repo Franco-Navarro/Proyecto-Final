@@ -19,7 +19,7 @@ $path = realpath("../portada");
 chdir($path);
 if (empty($_FILES['portada']['name']) == false) {
     if (is_uploaded_file($_FILES['portada']['tmp_name'])) {
-        if (move_uploaded_file($_FILES['portada']['tmp_name'], $titulo . ".jpg") == false)
+        if (move_uploaded_file($_FILES['portada']['tmp_name'], $titulo . ".png") == false)
             echo "No se ha podido el mover el archivo.";
         else
             echo "Archivo [" . $_FILES['portada']['name'] . "] subido y movido al directorio actual.";

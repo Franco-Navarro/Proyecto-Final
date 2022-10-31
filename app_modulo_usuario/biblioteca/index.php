@@ -1,5 +1,10 @@
 <?php
 include("../../scriptsPHP/manejoSesion.inc");
+
+if ($_SESSION['rol'] == 2) {
+    header('Location:../menu/index.php');
+}
+
 ?>
 
 <!DOCTYPE html>

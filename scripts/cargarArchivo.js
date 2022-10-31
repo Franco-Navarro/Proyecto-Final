@@ -3,7 +3,8 @@ export function cargarArchivo() {
         $pdf = document.getElementById("pdf").files[0],
         $portada = document.getElementById("portada").files[0],
         datos = new FormData();
-    datos.append("titulo", $titulo);
+        $titulo = $titulo.replace(/ /g, "_")
+    datos.append("titulo", $titulo.toLowerCase());
     datos.append("pdf", $pdf);
     datos.append("portada", $portada);
     if (confirm("Seguro que quiere cargar estos archivos") == true) {

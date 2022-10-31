@@ -1,4 +1,12 @@
 <?php
 include("../scriptsPHP/manejoSesion.inc");
-header('Location:abm.php');
+
+if ($_SESSION['rol'] == 1) {
+    header('Location:abm.php');
+} else if ($_SESSION['rol'] == 2) {
+    header('Location:../app_modulo_usuario/menu/index.php');
+} else if ($_SESSION['rol'] == 3) {
+    header('Location:../app_modulo_usuario/menu/index.php');
+}
+
 exit();

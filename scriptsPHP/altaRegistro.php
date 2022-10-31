@@ -2,7 +2,7 @@
 include("conexion.inc");
 $tipo = mysqli_real_escape_string($conexion,$_POST["tipo"]);
 // Desactivar toda notificación de error
-error_reporting(0);
+//error_reporting(0);
 if ($tipo === "libro") {
     $titulo = mysqli_real_escape_string($conexion,$_POST["titulo"]);
     $autor = mysqli_real_escape_string($conexion,$_POST["autor"]);
@@ -10,6 +10,7 @@ if ($tipo === "libro") {
     $saga = mysqli_real_escape_string($conexion,$_POST["saga"]);
     $paginas = mysqli_real_escape_string($conexion,$_POST["paginas"]);
     $descripcion = mysqli_real_escape_string($conexion,$_POST["descripcion"]);
+    $gratuito = mysqli_real_escape_string($conexion,$_POST["gratuito"]);
 
     if(isset($autor)){
         $resultado = mysqli_query($conexion, "SELECT id_autor FROM autores WHERE nombre = '$autor'");
@@ -22,7 +23,7 @@ if ($tipo === "libro") {
         $id_genero = $fila2['id_genero'];
     }
     if(isset($titulo) && isset($saga) && isset($descripcion) && isset($paginas)){
-        mysqli_query($conexion, "INSERT INTO libros VALUES (NULL, '$titulo', '$id_autor', '$saga', '$descripcion', '$paginas', '$id_genero')");
+        mysqli_query($conexion, "INSERT INTO libros VALUES (NULL, '$titulo', '$id_autor', '$saga', '$descripcion', '$paginas', '$id_genero', '$gratuito')");
     }
     mysqli_close($conexion);
     echo "INSERT realizado con exito en libros";
@@ -40,7 +41,7 @@ if ($tipo === "libro") {
         $id_rol = $fila['id_rol'];
     }
     if(isset($nombre) && isset($email) && isset($contrasenia)){
-        mysqli_query($conexion, "INSERT INTO usuarios VALUES (NULL, '$nombre', '$email', '$contraseniaEnc', '$id_rol')");
+        mysqli_query($conexion, "INSERT INTO usuarios VALUES (NULL, '$nombre', '$email', '$contraseniaEnc', '$id_rol', 'false')");
     }
     mysqli_close($conexion);
     echo "INSERT realizado con exito en usuarios";

@@ -9,7 +9,8 @@ export function crearTabla(json, element) {
                     $genero = document.createElement("td"),
                     $saga = document.createElement("td"),
                     $paginas = document.createElement("td"),
-                    $descripcion = document.createElement("td");
+                    $descripcion = document.createElement("td"),
+                    $gratuito = document.createElement("td");
 
                 $id.innerHTML = e['id'];
                 $titulo.innerHTML = e['titulo'];
@@ -18,6 +19,7 @@ export function crearTabla(json, element) {
                 $descripcion.innerHTML = e['descripcion'];
                 $paginas.innerHTML = e['paginas']
                 $genero.innerHTML = e['genero'];
+                $gratuito.innerHTML = e['gratuito'];
 
                 $fila.appendChild($id)
                 $fila.appendChild($titulo)
@@ -26,6 +28,7 @@ export function crearTabla(json, element) {
                 $fila.appendChild($saga)
                 $fila.appendChild($paginas)
                 $fila.appendChild($descripcion)
+                $fila.appendChild($gratuito)
 
                 $fila.addEventListener("dblclick", () => {
                     document.getElementById("id-libro").value = $fila.childNodes[0].innerHTML
@@ -35,6 +38,7 @@ export function crearTabla(json, element) {
                     document.getElementById("saga").value = $fila.childNodes[4].innerHTML
                     document.getElementById("paginas").value = $fila.childNodes[5].innerHTML
                     document.getElementById("descripcion").value = $fila.childNodes[6].innerHTML
+                    document.getElementById("gratuito").value = $fila.childNodes[7].innerHTML
                 })
                 element.appendChild($fila);
             }

@@ -35,6 +35,8 @@ cargarSelect($selectAutores, "autores", "nombre");
 cargarSelect($selectGeneros, "generos", "nombre");
 cargarSelect($selectRoles, "roles", "rol");
 
+window.location.hash = "usuario"
+
 $tablaLibro.addEventListener("click", () => cargarTabla("libro"));
 
 $tablaUsuario.addEventListener("click", () => cargarTabla("usuario"));

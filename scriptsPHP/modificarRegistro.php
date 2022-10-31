@@ -10,6 +10,7 @@ if ($tipo === "libro") {
     $genero = mysqli_real_escape_string($conexion,$_POST["genero"]);
     $saga = mysqli_real_escape_string($conexion,$_POST["saga"]);
     $paginas = mysqli_real_escape_string($conexion,$_POST["paginas"]);
+    $gratuito = mysqli_real_escape_string($conexion,$_POST["gratuito"]);
     $descripcion = mysqli_real_escape_string($conexion,$_POST["descripcion"]);
 
     if(isset($autor)){
@@ -23,7 +24,7 @@ if ($tipo === "libro") {
         $id_genero = $fila2['id_genero'];
     }
     if(isset($titulo) && isset($saga) && isset($descripcion) && isset($paginas) && isset($id)){
-        mysqli_query($conexion, "UPDATE libros SET titulo = '$titulo', fk_autor = '$id_autor', saga = '$saga', descripcion = '$descripcion', paginas_totales = '$paginas',   fk_genero = '$id_genero' WHERE id_libro = '$id';");
+        mysqli_query($conexion, "UPDATE libros SET titulo = '$titulo', fk_autor = '$id_autor', saga = '$saga', descripcion = '$descripcion', paginas_totales = '$paginas',   fk_genero = '$id_genero', gratuito = '$gratuito' WHERE id_libro = '$id';");
     }
 
     mysqli_close($conexion);
