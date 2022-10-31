@@ -40,19 +40,11 @@ include("../../scriptsPHP/manejoSesion.inc");
                     <div class="perfil-datos-contenedor">
                         <div>
                             <p><b>Usuario</b></p>
-                            <p>Pepe123</p>
+                            <p id="usuario">Pepe123</p>
                         </div>
                         <div>
                             <p><b>Email</b></p>
-                            <p>Pepe123@gmail.com</p>
-                        </div>
-                        <div>
-                            <p><b>Tarjeta</b></p>
-                            <p>**** **** **** 1305</p>
-                        </div>
-                        <div>
-                            <p><b>Titular tarjeta</b></p>
-                            <p>Pepe Gutierrez</p>
+                            <p id="email">Pepe123@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -60,11 +52,10 @@ include("../../scriptsPHP/manejoSesion.inc");
                     <h3>Nivel de suscripcion</h3>
                     <div class="perfil-suscripcion-contenedor">
                         <div>
-                            <h4>Premium</h4>
-                            <h4>Vence el 25/08/2022</h4>
+                            <h4 id="rol">Premium</h4>
+                            <h4 id="vencimiento">Vence el 25/08/2022</h4>
                         </div>
                         <a href="" id="cambiar-suscripcion">Cambiar nivel de Suscripcion</a>
-                        <a href="">Cancelar Suscripcion</a>
                     </div>
                     <div class="perfil-comprobante-contenedor">
                         <a href="">Comprobante - 26/07/2022</a>
@@ -78,10 +69,10 @@ include("../../scriptsPHP/manejoSesion.inc");
                 <div class="perfil-configuracion">
                     <h3>Configuracion</h3>
                     <div class="perfil-configuracion-contenedor">
-                        <a href="">Color de Tema</a>
-                        <a href="">Cambiar Contraseña</a>
+                        <a href="" id="cambiar-tema">Color de Tema</a>
+                        <a href="" id="cambiar-contraseña">Cambiar Contraseña</a>
                         <a href="" id="comentario">Envianos tu comentario</a>
-                        <a href="">Ayuda</a>
+                        <a href="" id="ayuda">Ayuda</a>
                     </div>
                 </div>
             </article>

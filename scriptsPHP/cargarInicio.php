@@ -21,6 +21,13 @@ if($sagaFiltro != null){
     array_push($columnas, $sagaFiltro);
 }
 
+if(2 == $_SESSION['rol']){
+    $filtroGratuito = ' AND libros.gratuito = 1';
+}
+else {
+    $filtroGratuito = '';
+}
+
 $filtro = '';
 
 if ($valor != null) {
@@ -31,10 +38,11 @@ if ($valor != null) {
     }
     $filtro = substr_replace($filtro, "", -3);
     $filtro = $filtro . ")";
-    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND " . $filtro);
+    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND " . $filtro . $filtroGratuito);
 } else {
-    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero");
+    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero" . $filtroGratuito);
 }
+
 $cant_filas = mysqli_num_rows($resultado);
 $fila = mysqli_fetch_assoc($resultado);
 $obj = new stdClass();
