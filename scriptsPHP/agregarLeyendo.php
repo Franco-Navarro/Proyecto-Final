@@ -1,4 +1,5 @@
 <?php
+include("manejoSesion.inc");
     include("conexion.inc");
 
     $id_usuario = $_POST['idUsuario'];

@@ -1,4 +1,5 @@
 <?php
+include("manejoSesion.inc");
 include("conexion.inc");
 $array = [];
 $valor = isset($_POST['valor']) ? mysqli_real_escape_string($conexion, $_POST['valor']) : null;

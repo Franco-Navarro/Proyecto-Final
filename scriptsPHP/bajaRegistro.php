@@ -1,7 +1,7 @@
 <?php
+include("manejoSesion.inc");
 include("conexion.inc");
 $tipo = $_POST["tipo"];
-error_reporting(0);
 
 if ($tipo === "libro") {
     $id = mysqli_real_escape_string($conexion,$_POST["id"]);

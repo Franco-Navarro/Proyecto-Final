@@ -1,4 +1,5 @@
 <?php
+include("manejoSesion.inc");
 include("conexion.inc");
 $tipo = mysqli_real_escape_string($conexion,$_POST["tipo"]);
 // Desactivar toda notificación de error

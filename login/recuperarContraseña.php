@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -40,7 +43,7 @@
                     </div>
                     <div class="recuperar-form-buttons">
                         <div class="recuperar-form-button">
-                            <a href="login.html">Atras</a>
+                            <a href="InicioSesion.php">Atras</a>
                         </div>
                         <div class="recuperar-form-button">
                             <button id="recuperar-siguiente">Siguiente</button>

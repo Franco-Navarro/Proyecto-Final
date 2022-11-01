@@ -1,4 +1,5 @@
 <?php
+include("manejoSesion.inc");
 include("conexion.inc");
 $array = [];
 $tipo = $_POST["tipo"];
