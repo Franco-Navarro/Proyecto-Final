@@ -26,7 +26,7 @@
                     $_SESSION['email'] = $results['email'];
                     $_SESSION['login'] = $nombre;
                     $_SESSION['idSesion'] = session_create_id();
-                    header('Location: ../../Proyecto-Final');
+                    header('Location: ../../Proyecto-Final/index.php');
                 }
                 else {
                     $message = 'Ha ingresado mal la contraseña.';
