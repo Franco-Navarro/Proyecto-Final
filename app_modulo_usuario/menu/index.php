@@ -1,6 +1,17 @@
 <?php
 include("../../scriptsPHP/manejoSesion.inc");
-$_SESSION["rol"];
+
+if ($_SESSION['rol'] != 2) {
+    if($_SESSION["tema_oscuro"] == 1) {
+        $tema = "class='dark'";
+    }
+    else {
+        $tema = "class=''";
+    }
+}
+else {
+    $tema = "class=''";
+}
 
 ?>
 
@@ -21,7 +32,7 @@ $_SESSION["rol"];
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body id="body">
+<body id="body" <?php echo $tema ?>>
     <header class="header">
         <div class="header-logo">
             <a href="index.php">
@@ -51,6 +62,10 @@ $_SESSION["rol"];
                         <label for="saga">Saga</label>
                         <input type="checkbox" checked="" name="saga" id="sagaFiltro">
                     </li>
+                    <li>
+                        <label for="gratuito">Gratuito</label>
+                        <input type="checkbox" name="gratuito" id="gratuitoFiltro">
+                    </li>
                 </ul>
                 <button class="header-buscador-filtro-boton" id="boton-filtro">
                     <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,10 +86,7 @@ $_SESSION["rol"];
     <main class="main" id="main">
 
     </main>
-
-    <script type="module" src="script.js">
-        const rol = <?php echo $_SESSION["rol"] ?>;
-    </script>
+    <script type="module" src="script.js"></script>
 
 </body>
 

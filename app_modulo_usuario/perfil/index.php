@@ -1,5 +1,18 @@
 <?php
 include("../../scriptsPHP/manejoSesion.inc");
+
+if ($_SESSION['rol'] != 2) {
+    if($_SESSION["tema_oscuro"] == 1) {
+        $tema = "class='dark'";
+    }
+    else {
+        $tema = "class=''";
+    }
+}
+else {
+    $tema = "class=''";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +32,7 @@ include("../../scriptsPHP/manejoSesion.inc");
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body id="body">
+<body id="body" <?php echo $tema ?>>
 <header class="header">
         <div class="header-logo">
             <a href="index.php">

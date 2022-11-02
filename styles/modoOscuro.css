@@ -10,9 +10,55 @@
 /* ***** Dark theme ***** */
 .dark {
     background-color: var(--background-color-oscuro);
+}
+body.dark h1 {
     color: var(--text-color-white);
+
 }
 
-body.dark label {
+body.dark .seccion-perfil h3{
+    color: var(--text-color-white);
+    
+}
+
+body.dark .libro-detalle-volver-boton {
+    color: var(--text-color-white);
+   border-bottom: 1px solid transparent;    
+   fill: var(--text-color-white);   
+}
+
+body.dark .libro-detalle-volver-boton:hover {
+   border-bottom: 1px solid var(--text-color-white);    
+}
+
+body.dark .libro-detalle-favorito-boton{
+    fill: var(--text-color-white);
+ 
+}
+
+body.dark .navegador-lista > li > a >  label, 
+body.dark .navegador-lista > li > div >  label,
+body.dark .navegador  > button >  label {
+    color: var(--text-color-black);
+}
+
+body.dark .tabla-cabecera th,
+body.dark .tabla-cuerpo td {
+   border: 1px solid var(--text-color-white);    
+   color: var(--text-color-white);
+}
+
+body.dark .tabla:nth-child(2)>thead:nth-child(1)>tr:nth-child(1):hover,
+body.dark .tabla:nth-child(1)>thead:nth-child(1)>tr:nth-child(1):hover {
+   background-color: var(--background-color-oscuro);
+}
+
+body.dark .tabla tr:hover {
+   background-color: var(--first-dark-color);
+}
+
+
+body.dark .formABM-seccion h2,
+body.dark .formABM-seccion label{
     color: var(--text-color-white);
 }

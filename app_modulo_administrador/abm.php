@@ -1,10 +1,18 @@
 <?php
 include("../scriptsPHP/manejoSesion.inc");
-if ($_SESSION['rol'] == 2) {
+if ($_SESSION["rol"] == 2) {
     header('Location:../app_modulo_usuario/menu/index.php');
-} else if ($_SESSION['rol'] == 3) {
+} else if ($_SESSION["rol"]  == 3) {
     header('Location:../app_modulo_usuario/menu/index.php');
 }
+
+if($_SESSION["tema_oscuro"] == 1) {
+    $tema = "class='dark'";
+}
+else {
+    $tema = "class=''";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +32,7 @@ if ($_SESSION['rol'] == 2) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body id="body">
+<body id="body" <?php echo $tema ?>>
     <span class="cargandoContenedor none" id="cargando-contenedor">
         <div class="cargandoSVG">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="237px" height="237px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">

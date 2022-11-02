@@ -13,8 +13,19 @@ const $perfil = document.getElementById("seccion-perfil"),
     $tarjetaNombre = document.getElementById("mostrar-nombre"),
     $tarjetaFecha = document.getElementById("mostrar-fecha"),
     datosTarjeta = { numero: null, nombre: null, fecha: null, codigo: null, dni: null },
-    $botonEnviarMail = document.getElementById("enviar-mail");
+    $botonEnviarMail = document.getElementById("enviar-mail"),
+    $botonCambiarTema = document.getElementById("cambiar-tema");
 
+let $datos;
+
+fetch("../../scriptsPHP/datosUsuario.php", {
+    method: 'GET'
+})
+    .then(res => res.json())
+    .then(json => {
+        $datos = json;
+    })
+    .catch(error => console.error('Error: ', error))
 
 document.getElementById("comentario").addEventListener("click", (e) => {
     e.preventDefault();
@@ -157,10 +168,33 @@ $fecha.addEventListener("keyup", () => {
     }
 })
 
+$botonCambiarTema.addEventListener("click", (e) => {
+    e.preventDefault()
+    if ($datos["rol"] != 2) {
+        fetch("../../scriptsPHP/cambiarTema.php", {
+            method: 'POST'
+        })
+            .then(res => res.text())
+            .then(json => {
+                $body = document.getElementById("body");
+                console.log(json)
+                if (json == 1) {
+                    $body.classList.add("dark");
+                }
+                else {
+                    $body.classList.remove("dark");
+                }
+
+            })
+            .catch(error => console.error('Error: ', error))
+            .finally(() => {
+            })
+    }
+})
+
 import { navegador } from "../../scripts/navUser.js";
 import { footer } from "../../scripts/footerGit.js";
 import { enviarMail } from "../../scripts/enviarMail.js";
-
 
 let $body = document.getElementById("body"),
     $main = document.getElementById("main"),

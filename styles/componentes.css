@@ -351,6 +351,10 @@
     transform: scale(1.02);
 }
 
+.tarjeta-libro-gris img{
+    filter: grayscale(1);
+}
+
 .tarjeta-libro-contenedor {
     width: 100%;
     height: 100%;

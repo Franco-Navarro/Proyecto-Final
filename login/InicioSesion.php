@@ -24,7 +24,8 @@
                     $_SESSION['rol'] = $results['fk_rol'];
                     $_SESSION['idUsuario'] = $results['id_usuario'];
                     $_SESSION['email'] = $results['email'];
-                    $_SESSION['login'] = $nombre;
+                    $_SESSION['tema_oscuro'] = $results['tema_oscuro'];
+                    $_SESSION['login'] = $results['nombre'];
                     $_SESSION['idSesion'] = session_create_id();
                     header('Location: ../');
                 }

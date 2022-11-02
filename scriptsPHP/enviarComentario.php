@@ -16,5 +16,5 @@ $enviado = mail($destino, $asunto, $mensaje, $header);
 if ($enviado == true) {
 	echo "Su correo ha sido enviado.";
 } else {
-	echo "Hubo un error en el envio del mail.";
+	echo "Hubo un error al enviar el mail.";
 }

@@ -4,6 +4,14 @@ include("../../scriptsPHP/manejoSesion.inc");
 if ($_SESSION['rol'] == 2) {
     header('Location:../menu/index.php');
 }
+else {
+    if($_SESSION["tema_oscuro"] == 1) {
+        $tema = "class='dark'";
+    }
+    else {
+        $tema = "class=''";
+    }
+}
 
 ?>
 
@@ -24,7 +32,7 @@ if ($_SESSION['rol'] == 2) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body id="body">
+<body id="body" <?php echo $tema ?>>
 <header class="header">
         <div class="header-logo">
             <a href="index.php">

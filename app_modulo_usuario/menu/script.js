@@ -1,7 +1,3 @@
-// ESTA FUNCION ES TEMPORAL Y ABRE LA VENTANA DE DESCRIPCION DEL LIBRO
-// document.getElementById("tarjeta-libro").addEventListener("click", ()=> {
-//     window.location = "../libroDetalle/";
-// })
 
 import { navegador } from "../../scripts/navUser.js";
 import { cargarInicio } from "../../scripts/cargarInicio.js";
@@ -12,7 +8,7 @@ import { cargarLeyendo } from "../../scripts/cargarLeyendo.js";
 let $body = document.getElementById("body"),
     $main = document.getElementById("main"),
     $navegador = navegador(),
-    $contendor = cargarInicio(),
+    $contenedor = cargarInicio(),
     $contenedorLeyendo = cargarLeyendo(),
     $footer = footer(),
     $botonFiltro = document.getElementById("boton-filtro"),
@@ -31,7 +27,7 @@ let $body = document.getElementById("body"),
 
 
 $main.appendChild($contenedorLeyendo);
-$main.appendChild($contendor);
+$main.appendChild($contenedor);
 $body.appendChild($main);
 $body.appendChild($footer);
 $body.appendChild($navegador);

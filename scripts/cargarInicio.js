@@ -10,6 +10,7 @@ export function cargarInicio() {
     tituloFiltro = document.getElementById("tituloFiltro"),
     generoFiltro = document.getElementById("generoFiltro"),
     sagaFiltro = document.getElementById("sagaFiltro"),
+    gratuitoFiltro = document.getElementById("gratuitoFiltro"),
     inputBuscar = document.getElementById("buscador-input");
     
     if(autorFiltro.checked){
@@ -24,8 +25,13 @@ export function cargarInicio() {
     if(sagaFiltro.checked){
         datos.append("sagaFiltro", "libros.saga");
     }
+    if(gratuitoFiltro.checked){
+        datos.append("gratuitoFiltro", "true");
+    }
+    else {
+        datos.append("gratuitoFiltro", "false");
+    }
     datos.append("valor", inputBuscar.value);
-
     $contenedor.classList.add("inicio-contenido");
     $contenedor.id = "tarjeta-container";
     $h1.classList.add("inicio-contenido-titulo");

@@ -7,6 +7,7 @@ $autorFiltro = isset($_POST['autorFiltro']) ? mysqli_real_escape_string($conexio
 $tituloFiltro = isset($_POST['tituloFiltro']) ? mysqli_real_escape_string($conexion, $_POST['tituloFiltro']) : null;
 $generoFiltro = isset($_POST['generoFiltro']) ? mysqli_real_escape_string($conexion, $_POST['generoFiltro']) : null;
 $sagaFiltro = isset($_POST['sagaFiltro']) ? mysqli_real_escape_string($conexion, $_POST['sagaFiltro']) : null;
+$gratuitoFiltro = isset($_POST['gratuitoFiltro']) ? mysqli_real_escape_string($conexion, $_POST['gratuitoFiltro']) : null;
 $columnas = [];
 
 if($autorFiltro != null){
@@ -22,10 +23,10 @@ if($sagaFiltro != null){
     array_push($columnas, $sagaFiltro);
 }
 
-if(2 == $_SESSION['rol']){
+if($gratuitoFiltro == "true"){
     $filtroGratuito = ' AND libros.gratuito = 1';
 }
-else {
+else if($gratuitoFiltro == "false") {
     $filtroGratuito = '';
 }
 
@@ -39,9 +40,9 @@ if ($valor != null) {
     }
     $filtro = substr_replace($filtro, "", -3);
     $filtro = $filtro . ")";
-    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND " . $filtro . $filtroGratuito);
+    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales, libros.gratuito FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND " . $filtro . $filtroGratuito);
 } else {
-    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero" . $filtroGratuito);
+    $resultado = mysqli_query($conexion, "SELECT libros.id_libro, libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero',libros.saga, libros.descripcion, libros.paginas_totales, libros.gratuito FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero" . $filtroGratuito);
 }
 
 $cant_filas = mysqli_num_rows($resultado);
@@ -56,6 +57,7 @@ for ($i = 0; $i < $cant_filas; $i++) {
     $obj->saga = $fila["saga"];
     $obj->descripcion = $fila["descripcion"];
     $obj->paginas = $fila["paginas_totales"];
+    $obj->gratuito = $fila["gratuito"];
     $obj->pdf = '../../assets/pdf/'. $fila["titulo"] . '.pdf';
     $obj->portada = '../../assets/portada/'. $fila["titulo"].'.png';
 
