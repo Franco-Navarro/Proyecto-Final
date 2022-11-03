@@ -9,16 +9,19 @@ export function cargarLeyendo() {
     $contenedor.id = "tarjeta-container";
     $h1.classList.add("inicio-contenido-titulo");
     $h1.innerHTML = "Continuar Leyendo";
-    $contenedor.appendChild($h1);
 
     fetch("../../scriptsPHP/selectLeyendo.php", {
         method: 'GET',
     })
         .then(res => res.json())
         .then(json => {
-            for (let i = 0; i < json.libros.length; i++) {
-                $tarjeta = tarjetaLibro(json.libros[i]);
-                $contenedor.appendChild($tarjeta);
+            if(json.libros.length > 0){
+                $contenedor.appendChild($h1);
+                for (let i = 0; i < json.libros.length; i++) {
+                    $tarjeta = tarjetaLibro(json.libros[i]);
+                    $contenedor.appendChild($tarjeta);
+                    
+                }
             }
         })
         .catch(error => console.error('Error: ', error))

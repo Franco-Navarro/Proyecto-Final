@@ -45,11 +45,12 @@ export function detalleLibro(json) {
     $buttonFavorito.appendChild($spanNoAgregado);
     $buttonFavorito.classList.add("libro-detalle-favorito-boton");
     $buttonFavorito.onclick = () => {
-        agregarFavorito(window.location.hash);
-    }
-
-    $buttonFavorito.onclick = () => {
         esFavorito(id);
+        let agregado = document.getElementById("favorito-agregado"),
+            noAgregado = document.getElementById("favorito-no-agregado");
+
+            agregado.classList.toggle("none");
+            noAgregado.classList.toggle("none");
     }
 
     $detalle.classList.add("libro-detalle-contenido");
@@ -92,7 +93,7 @@ function volver(e) {
 
 function estaEnFavoritos(idLibroParametro) {
     let data = new FormData();
-        data.append("id", idLibroParametro);
+    data.append("id", idLibroParametro);
 
     fetch("../../scriptsPHP/buscarFavorito.php", {
         method: 'POST',
@@ -100,16 +101,17 @@ function estaEnFavoritos(idLibroParametro) {
     })
         .then(response => response.text())
         .then(json => {
-            if (json) {
-                let agregado = document.getElementById("favorito-agregado"),
-                noAgregado = document.getElementById("favorito-no-agregado");
+            if (json == "true") {
                 
+                let agregado = document.getElementById("favorito-agregado"),
+                    noAgregado = document.getElementById("favorito-no-agregado");
+
                 agregado.classList.remove("none");
                 noAgregado.classList.add("none");
             } else {
                 let agregado = document.getElementById("favorito-agregado"),
-                noAgregado = document.getElementById("favorito-no-agregado");
-                
+                    noAgregado = document.getElementById("favorito-no-agregado");
+
                 agregado.classList.add("none");
                 noAgregado.classList.remove("none");
             }
@@ -126,26 +128,28 @@ function esFavorito(idLibroParametro) {
     })
         .then(response => response.text())
         .then(json => {
-            if (json) {
+            if (json == "true") {
                 borrarFavorito(data);
-                estaEnFavoritos(idLibroParametro)
             } else {
                 agregarFavorito(data)
-                estaEnFavoritos(idLibroParametro)
             }
-        });
+        })
+        
+    
 }
 
 function agregarFavorito(data) {
     fetch("../../scriptsPHP/agregarFavorito.php", {
         method: 'POST',
         body: data
-    });
+    })
+    .finally(estaEnFavoritos(data.get("id")))
 }
 
 function borrarFavorito(data) {
     fetch("../../scriptsPHP/borrarFavorito.php", {
         method: 'POST',
         body: data
-    });
+    })
+    .finally(estaEnFavoritos(data.get("id")))
 }

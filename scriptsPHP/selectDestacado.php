@@ -2,7 +2,7 @@
 include("manejoSesion.inc");
     include("conexion.inc");
     $array = [];
-    $query = "SELECT libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero', libros.saga, libros.descripcion, libros.paginas_totales FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND libros.destacado = 1  LIMIT 3";
+    $query = "SELECT libros.titulo, autores.nombre AS 'autor', generos.nombre AS 'genero', libros.saga, libros.descripcion, libros.paginas_totales, libros.gratuito FROM libros, autores, generos WHERE libros.fk_autor = autores.id_autor AND libros.fk_genero = generos.id_genero AND libros.destacado = 1  LIMIT 3";
 
     $resultado = mysqli_query($conexion, $query);
     $cant_filas = mysqli_num_rows($resultado);
@@ -16,6 +16,7 @@ include("manejoSesion.inc");
         $obj->saga = $fila["saga"];
         $obj->descripcion = $fila["descripcion"];
         $obj->paginas = $fila["paginas_totales"];
+        $obj->gratuito = $fila["gratuito"];
         $obj->pdf = '../../assets/pdf/'. $fila["titulo"] . '.pdf';
         $obj->portada = '../../assets/portada/'. $fila["titulo"].'.png';
 

@@ -29,8 +29,7 @@ export function cargarFavoritos() {
     $contenedor.classList.add("biblioteca-detalle");
     $contenedor.id = "tarjeta-container";
     $h1.classList.add("seccion-biblioteca-titulo");
-    $h1.innerHTML = "Tus Favoritos";
-    $contenedor.appendChild($h1);
+    
 
     fetch("../../scriptsPHP/selectFavoritos.php", {
         method: 'POST',
@@ -39,14 +38,23 @@ export function cargarFavoritos() {
     })
         .then(res => res.json())
         .then(json => {
-            for (let i = 0; i < json.libros.length; i++) {
-                $tarjeta = tarjetaLibro(json.libros[i]);
-                $contenedor.appendChild($tarjeta);
+            if(json.libros.length > 0) {
+                $h1.innerHTML = "Tus Favoritos";
+                $contenedor.appendChild($h1);
+                for (let i = 0; i < json.libros.length; i++) {
+                    $tarjeta = tarjetaLibro(json.libros[i]);
+                    $contenedor.appendChild($tarjeta);
+                }
+            }
+            else {
+                $h1.innerHTML = "No tienes favoritos agregados";
+                $contenedor.appendChild($h1);
             }
         })
         .catch(error => console.error('Error: ', error))
         .finally(()=> {
         })
+        
 
     return $contenedor;
 
