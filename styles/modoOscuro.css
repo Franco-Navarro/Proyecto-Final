@@ -21,7 +21,8 @@ body.dark .seccion-perfil h3{
     
 }
 
-body.dark .libro-detalle-volver-boton {
+body.dark .libro-detalle-volver-boton,
+body.dark .libro-destacado-boton {
     color: var(--text-color-white);
    border-bottom: 1px solid transparent;    
    fill: var(--text-color-white);   

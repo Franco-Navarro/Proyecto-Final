@@ -99,25 +99,25 @@ $botonCargaArchivo.addEventListener("click", (e) => {
     }
 })
 
-$botonAltaAutor.addEventListener("click", (e)=> {
+$botonAltaAutor.addEventListener("click", (e) => {
     e.preventDefault();
     modalForm("autor");
 })
 
-$botonAltaRol.addEventListener("click", (e)=> {
+$botonAltaRol.addEventListener("click", (e) => {
     e.preventDefault();
     modalForm("rol");
 })
 
-$botonAltaGenero.addEventListener("click", (e)=> {
+$botonAltaGenero.addEventListener("click", (e) => {
     e.preventDefault();
     modalForm("genero");
 })
 
 
-$botonBuscar.addEventListener("click", (e)=> {
+$botonBuscar.addEventListener("click", (e) => {
     e.preventDefault()
-    if(window.location.hash == "#usuario") {
+    if (window.location.hash == "#usuario") {
         cargarTabla("usuario")
     }
     else if (window.location.hash == "#libro") {
@@ -125,13 +125,13 @@ $botonBuscar.addEventListener("click", (e)=> {
     }
 })
 
- $inputBuscar.addEventListener("keyup", ()=> {
-    if(window.location.hash == "#usuario") {
-     cargarTabla("usuario")
+$inputBuscar.addEventListener("keyup", () => {
+    if (window.location.hash == "#usuario") {
+        cargarTabla("usuario")
 
     }
     else if (window.location.hash == "#libro") {
-     cargarTabla("libro")
+        cargarTabla("libro")
     }
 })
 
@@ -155,17 +155,17 @@ function modalForm(tipo) {
     $form.classList.add("contenedorModalForm");
     $contenedorBotones.classList.add("contenedorModalBotones");
 
-    $titulo.innerHTML= `AGREGAR ${tipo.toUpperCase()}`;
+    $titulo.innerHTML = `AGREGAR ${tipo.toUpperCase()}`;
     $enviar.innerHTML = "enviar";
     $cerrar.innerHTML = "salir";
     $nombre.id = "contenedor-input-valor";
     $contenedor.id = "modal-contenedor";
 
-    $enviar.onclick = (e)=> {
+    $enviar.onclick = (e) => {
         e.preventDefault()
         altaRegistro(tipo);
-    } 
-    $cerrar.onclick = (e)=> {
+    }
+    $cerrar.onclick = (e) => {
         e.preventDefault()
         let $modalAEliminar = document.getElementById("modal-contenedor");
         $body.removeChild($modalAEliminar);

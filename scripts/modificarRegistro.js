@@ -55,6 +55,7 @@ export function modificarRegistro(tipo) {
             $paginas = document.getElementById("paginas"),
             $descripcion = document.getElementById("descripcion"),
             $gratuito = document.getElementById("gratuito"),
+            $destacado = document.getElementById("destacado"),
             datos = new FormData();
 
         if (verificarInputs($id, $titulo, $saga, $paginas, $descripcion)) {
@@ -67,6 +68,7 @@ export function modificarRegistro(tipo) {
             datos.append("paginas", $paginas.value);
             datos.append("descripcion", $descripcion.value);
             datos.append("gratuito", $gratuito.value);
+            datos.append("destacado", $destacado.value);
             
             if (confirm("Seguro que quiere enviar el formulario de modificacion") == true) {
                 fetch("../scriptsPHP/modificarRegistro.php", {

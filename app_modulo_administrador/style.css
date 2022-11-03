@@ -308,6 +308,19 @@
    gap: 1rem;
 }
 
+
+.libro-destacado-boton {
+   position: absolute;
+   top: 5rem;
+   right: 2rem;
+   width: 25px;
+   height: 25px;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+
 @media screen and (max-width: 1000px) {
    .formABM {
       grid-template-columns: repeat(2, 1fr);

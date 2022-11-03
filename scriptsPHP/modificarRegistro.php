@@ -13,6 +13,12 @@ if ($tipo === "libro") {
     $paginas = mysqli_real_escape_string($conexion,$_POST["paginas"]);
     $gratuito = mysqli_real_escape_string($conexion,$_POST["gratuito"]);
     $descripcion = mysqli_real_escape_string($conexion,$_POST["descripcion"]);
+    $destacado = mysqli_real_escape_string($conexion,$_POST["destacado"]);
+
+    if($gratuito == "Gratuito") {$gratuito = 1;}
+    else if($gratuito == "Pago") {$gratuito = 0;}
+    if($destacado == "Si") {$destacado = 1;}
+    else if ($destacado == "No") {$destacado = 0;}
 
     if(isset($autor)){
         $resultado = mysqli_query($conexion, "SELECT id_autor FROM autores WHERE nombre = '$autor'");
@@ -25,7 +31,7 @@ if ($tipo === "libro") {
         $id_genero = $fila2['id_genero'];
     }
     if(isset($titulo) && isset($saga) && isset($descripcion) && isset($paginas) && isset($id)){
-        mysqli_query($conexion, "UPDATE libros SET titulo = '$titulo', fk_autor = '$id_autor', saga = '$saga', descripcion = '$descripcion', paginas_totales = '$paginas',   fk_genero = '$id_genero', gratuito = '$gratuito' WHERE id_libro = '$id';");
+        mysqli_query($conexion, "UPDATE libros SET titulo = '$titulo', fk_autor = '$id_autor', saga = '$saga', descripcion = '$descripcion', paginas_totales = '$paginas',   fk_genero = '$id_genero', gratuito = '$gratuito', destacado = $destacado WHERE id_libro = '$id';");
     }
 
     mysqli_close($conexion);

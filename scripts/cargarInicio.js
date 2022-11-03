@@ -1,7 +1,6 @@
 import { tarjetaLibro } from "./tarjetaLibro.js";
 
 export function cargarInicio() {
-
     let $tarjeta,
     $contenedor = document.createElement("section"),
     $h1 = document.createElement("h1"),
@@ -54,5 +53,4 @@ export function cargarInicio() {
         })
 
     return $contenedor;
-
 }

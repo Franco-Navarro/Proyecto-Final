@@ -6,10 +6,9 @@ if ($_SESSION["rol"] == 2) {
     header('Location:../app_modulo_usuario/menu/index.php');
 }
 
-if($_SESSION["tema_oscuro"] == 1) {
+if ($_SESSION["tema_oscuro"] == 1) {
     $tema = "class='dark'";
-}
-else {
+} else {
     $tema = "class=''";
 }
 
@@ -132,9 +131,18 @@ else {
                     <div class="formABM-titulo">
                         <h2>Nuevo Libro</h2>
                     </div>
-                    <div class="formABM-input">
-                        <label for="id">Id</label>
-                        <input type="text" id="id-libro" name="id-libro" disabled>
+                    <div class="formABM-input" style="display: flex; justify-content: space-between;">
+                        <div class="formABM-input">
+                            <label for="id">Id</label>
+                            <input type="text" id="id-libro" name="id-libro" disabled>
+                        </div>
+                        <div class="formABM-input">
+                            <label for="destacado">Destacado</label>
+                            <select name="destacado" id="destacado" required>
+                                <option value="No">No</option>
+                                <option value="Si">Si</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="formABM-input">
                         <label for="titulo">Titulo</label>
@@ -144,13 +152,11 @@ else {
                         <label for="autor">Autor</label>
                         <select name="autor" id="autor" required></select>
                         <button id="insert-autor">+</button>
-
                     </div>
                     <div class="formABM-input">
                         <label for="genero">Genero</label>
                         <select name="genero" id="genero" required></select>
                         <button id="insert-genero">+</button>
-
                     </div>
                     <div class="formABM-input">
                         <label for="saga">Saga</label>
@@ -164,12 +170,11 @@ else {
                         <div class="formABM-input" style="width: 45%;">
                             <label for="gratuito">Suscripcion</label>
                             <select name="gratuito" id="gratuito" required>
-                                <option value="0">Pago</option>
-                                <option value="1">Gratuito</option>
+                                <option value="Pago">Pago</option>
+                                <option value="Gratuito">Gratuito</option>
                             </select>
                         </div>
                     </div>
-
                     <div class="formABM-textarea">
                         <label for="descripcion">Descripcion</label>
                         <textarea name="descripcion" id="descripcion" required pattern="[A-Za-z0-9]+"></textarea>
@@ -227,6 +232,7 @@ else {
                             <th>PAGINAS</th>
                             <th>DESCRIPCION</th>
                             <th>GRATUITO</th>
+                            <th>DESTACADO</th>
                         </tr>
                     </thead>
                     <tbody class="tabla-cuerpo" id="tabla-cuerpo-libro">

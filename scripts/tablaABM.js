@@ -10,7 +10,8 @@ export function crearTabla(json, element) {
                     $saga = document.createElement("td"),
                     $paginas = document.createElement("td"),
                     $descripcion = document.createElement("td"),
-                    $gratuito = document.createElement("td");
+                    $gratuito = document.createElement("td"),
+                    $destacado = document.createElement("td");
 
                 $id.innerHTML = e['id'];
                 $titulo.innerHTML = e['titulo'];
@@ -19,7 +20,19 @@ export function crearTabla(json, element) {
                 $descripcion.innerHTML = e['descripcion'];
                 $paginas.innerHTML = e['paginas']
                 $genero.innerHTML = e['genero'];
-                $gratuito.innerHTML = e['gratuito'];
+                if(e['gratuito'] == 1) {
+                    $gratuito.innerHTML = "Gratuito";
+                }
+                else {
+                    $gratuito.innerHTML = "Pago";
+                }
+                if(e['destacado'] == 1) {
+                    $destacado.innerHTML = "Si";
+                }
+                else {
+                    $destacado.innerHTML = "No";
+                }
+                
 
                 $fila.appendChild($id)
                 $fila.appendChild($titulo)
@@ -29,6 +42,7 @@ export function crearTabla(json, element) {
                 $fila.appendChild($paginas)
                 $fila.appendChild($descripcion)
                 $fila.appendChild($gratuito)
+                $fila.appendChild($destacado)
 
                 $fila.addEventListener("dblclick", () => {
                     document.getElementById("id-libro").value = $fila.childNodes[0].innerHTML
@@ -39,6 +53,7 @@ export function crearTabla(json, element) {
                     document.getElementById("paginas").value = $fila.childNodes[5].innerHTML
                     document.getElementById("descripcion").value = $fila.childNodes[6].innerHTML
                     document.getElementById("gratuito").value = $fila.childNodes[7].innerHTML
+                    document.getElementById("destacado").value = $fila.childNodes[8].innerHTML
                 })
                 element.appendChild($fila);
             }

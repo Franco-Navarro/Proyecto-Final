@@ -54,6 +54,7 @@ export function altaRegistro(tipo) {
             $paginas = document.getElementById("paginas"),
             $descripcion = document.getElementById("descripcion"),
             $gratuito = document.getElementById("gratuito"),
+            $destacado = document.getElementById("destacado"),
             datos = new FormData();
 
         if (verificarInputs($titulo, $saga, $paginas, $descripcion)) {
@@ -65,6 +66,7 @@ export function altaRegistro(tipo) {
             datos.append("paginas", $paginas.value);
             datos.append("descripcion", $descripcion.value);
             datos.append("gratuito", $gratuito.value);
+            datos.append("destacado", $destacado.value);
             if (confirm("Seguro que quiere enviar el formulario de alta") == true) {
                 fetch("../scriptsPHP/altaRegistro.php", {
                     method: 'POST',
