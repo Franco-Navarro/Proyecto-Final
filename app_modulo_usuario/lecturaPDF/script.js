@@ -1,12 +1,13 @@
-// DESACTIVA LOS CLICKS DERECHOS DENTRO DE LA WEB
-//document.oncontextmenu = ()=>{return false}
+
+let titulo = window.location.hash.substring(1),
+  url = `../../assets/pdf/${titulo}.pdf`,
+  pdfCargado = null,
+  tipoActual = false;
+
+  buscarLeyendo(titulo.replace(/_/g, " "));
 
 
-// PARAMETROS PARA CARGAR EL PDF
-let url = `../../assets/pdf/${window.location.hash.substring(1)}.pdf`,
-  pdfCargado = null, // VARIABLE PARA EL ARCHIVO
-  tipoActual = false; // VARIABLE PARA EL TIPO DE LECTURA: false 1 PAGINA; true 2 PAGINA
-// ES UNA MIERDA LO DE true o false YA LO SE LO TENGO QUE CAMBIAR
+
 
 // CARGA LA PAGINA INDICADA AL CARGAR LA WEB 
 (() => {
@@ -79,7 +80,6 @@ document.getElementById("dos-pagina").addEventListener("click", () => {
 function cambiarPagina(paginaNumero, zoom, tipoDos) {
   let $canvas = document.getElementById("pdf-renderer"),
     $canvasDos = document.getElementById("pdf-2-renderer");
-
   pdfjsLib.getDocument(url).promise.then((pdf) => { // TRAE EL PDF INDICADO EN URL
     pdfCargado = pdf;
 
@@ -114,6 +114,50 @@ function zoomActual() {
 }
 
 
-// PIDO PERDON SI NO SE ENTIENDE NADA, NO LO ENTIENDO NI YO JAJAJAJA
-// YA VERE DE ARREGARLO UN POCO SI SOBRA TIEMPO
-// LO IMPORTANTE ES QUE FUNCIONA :)
+function buscarLeyendo(titulo) {
+  let data = new FormData();
+  data.append("titulo", titulo);
+
+  fetch("../../scriptsPHP/buscarLeyendo.php", {
+      method: 'POST',
+      body: data
+  })
+  .then(res => res.json())
+  .then(json => { console.log(json)
+    if(json[0]["pagina_actual"] == "undefined") {
+        agregarLeyendo(titulo);
+      }
+    else {
+      let inputPaginaActual = document.getElementById("paginaActual");
+      inputPaginaActual = json[0]["pagina_actual"];
+    }
+  })
+  .catch(err => console.error(err))
+}
+
+function agregarLeyendo(titulo) {
+  let data = new FormData();
+  data.append("titulo", titulo);
+
+  fetch("../../scriptsPHP/agregarLeyendo.php", {
+      method: 'POST',
+      body: data
+  })
+  .catch(err => console.error(err))
+}
+
+function actualizarPagina() {
+  
+}
+
+
+function borrarLeyendo(id) {
+  let data = new FormData();
+  data.append("id", id);
+
+  fetch("../../scriptsPHP/borrarLeyendo.php", {
+      method: 'POST',
+      body: data
+  })
+  .catch(err => console.error(err))
+}
