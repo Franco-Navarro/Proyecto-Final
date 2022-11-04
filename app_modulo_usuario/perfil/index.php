@@ -1,17 +1,66 @@
 <?php
-include("../../scriptsPHP/manejoSesion.inc");
-
-if ($_SESSION['rol'] != 2) {
-    if($_SESSION["tema_oscuro"] == 1) {
-        $tema = "class='dark'";
+    include("../../scriptsPHP/manejoSesion.inc");
+    require '../../scriptsPHP/conexion.inc';
+    if ($_SESSION['rol'] != 2) {
+        if($_SESSION["tema_oscuro"] == 1) {
+            $tema = "class='dark'";
+        }
+        else {
+            $tema = "class=''";
+        }
     }
     else {
         $tema = "class=''";
     }
-}
-else {
-    $tema = "class=''";
-}
+    
+    $nombre = $_SESSION["login"];
+    $email = $_SESSION['email'];
+    $rol = $_SESSION['rol'];
+    $fk_usuario = $_SESSION['idUsuario'];    
+
+    $nivel = '';
+
+    $mensaje = '';
+    if($rol == 1){
+        $nivel = 'Administrador';  
+        
+        $dias_disponibles = "Ilimitados";
+    }
+    if($rol == 2){
+        $nivel = 'gratuito';  
+        
+        $dias_disponibles = "Es una cuenta gratuita, tiene una cantidad ilimitada de dias disponible.";
+    }
+    if($rol == 3){
+        
+        $query = mysqli_query($conexion, "SELECT MAX(fecha_pago) FROM facturas WHERE fk_usuario = '$fk_usuario'");
+
+        $result = mysqli_fetch_assoc($query);
+        $ultimaFecha = implode($result);
+
+        $proximoVencimiento = date("Y-m-d",strtotime($ultimaFecha."+ 30 days"));
+
+        $fecha_actual = date("Y-m-d");
+
+        $nivel = 'premium';    
+
+        $query3 = mysqli_query($conexion, "SELECT MAX(fecha_pago) FROM facturas WHERE fk_usuario = '$fk_usuario' AND primera_cuota = 1");
+        
+        $result3 = mysqli_fetch_assoc($query3);
+        $fecha_maxima = implode($result3);
+
+        $fecha1 = new dateTime ($fecha_actual);
+        $fecha2 = new dateTime ($fecha_maxima);
+        //$fecha2 = new dateTime ("2022-11-05");
+
+        $diff = $fecha1->diff($fecha2);
+
+        $diferencia = $diff->days;
+
+        $query2 = mysqli_query($conexion, "SELECT dias_disponibles FROM dias WHERE fk_usuario = '$fk_usuario'");
+        $result2 = mysqli_fetch_assoc($query2);
+        $dias_disponibles = $result2['dias_disponibles'] - $diferencia;
+    }      
 
 ?>
 
@@ -53,11 +102,11 @@ else {
                     <div class="perfil-datos-contenedor">
                         <div>
                             <p><b>Usuario</b></p>
-                            <p id="usuario">Pepe123</p>
+                            <p id="usuario"> <?= $nombre ?></p>
                         </div>
                         <div>
                             <p><b>Email</b></p>
-                            <p id="email">Pepe123@gmail.com</p>
+                            <p id="email"><?= $email ?></p>
                         </div>
                     </div>
                 </div>
@@ -65,18 +114,19 @@ else {
                     <h3>Nivel de suscripcion</h3>
                     <div class="perfil-suscripcion-contenedor">
                         <div>
-                            <h4 id="rol">Premium</h4>
-                            <h4 id="vencimiento">Vence el 25/08/2022</h4>
+                            <h4 id="rol">Tipo de cuenta: <?=$nivel?></h4>
+                            <!-- <h4 id="vencimiento">Vence el <?=$proximoVencimiento?></h4>
+                            <h4 id="fecAc">Fecha actual <?=$fecha_actual?></h4>
+                            <h4 id="UltiFec">Ultima Fecha <?=$ultimaFecha?></h4>
+                            <h4 id="fecRes">Ultima fecha menos fecha actual <?=$diferencia?></h4> -->
                         </div>
-                        <a href="" id="cambiar-suscripcion">Cambiar nivel de Suscripcion</a>
+                        <h4 id="vencimiento">Días restantes de uso: <?=$dias_disponibles?></h4>
+                        <a href="pago.php" id="pagar-suscripcion">Abonar otros 30 días</a>
+                        <!-- <a href="" id="cambiar-suscripcion">Cambiar nivel de Suscripcion</a> -->
+                        <a href="gratis.php" id="cambiar-suscripcion-gratuita">Cambiar nivel de cuenta gratuita</a>
+                        <a href="premium.php" id="cambiar-suscripcion-premium">Cambiar nivel de cuenta premium</a>
                     </div>
                     <div class="perfil-comprobante-contenedor">
-                        <a href="">Comprobante - 26/07/2022</a>
-                        <a href="">Comprobante - 26/06/2022</a>
-                        <a href="">Comprobante - 26/05/2022</a>
-                        <a href="">Comprobante - 26/04/2022</a>
-                        <a href="">Comprobante - 26/03/2022</a>
-                        <a href="">Comprobante - 26/02/2022</a>
                     </div>
                 </div>
                 <div class="perfil-configuracion">
@@ -90,7 +140,7 @@ else {
                 </div>
             </article>
         </section>
-
+        <!-- SECCION DE COMENTARIO -->
         <section class="seccion-contacto none" id="seccion-comentario">
             <div class="seccion-contacto-volver" id="seccion-comentario-volver">
                 <button>
@@ -134,7 +184,8 @@ else {
                 </svg>
                 Salir
             </button>
-        </div>
+        </div>        
+
         <!--SECCION DE REGISTRO TIPO DE SUSCRIPCION-->
         <section class="tipo-suscripcion-seccion none" id="seccion-suscripcion">
             <article class="tipo-suscripcion-contenido">
@@ -278,3 +329,5 @@ else {
 </body>
 
 </html>
+
+

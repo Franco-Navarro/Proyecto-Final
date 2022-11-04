@@ -13,24 +13,62 @@
             $password = $_POST['password'];
 
             $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE nombre = '$nombre'");
-
-            $results = mysqli_fetch_assoc($query);
+            $results = mysqli_fetch_assoc($query);            
 
             if(!$results){
                 $message = "La contraseña y el usuario son incorrectos.";
             }
             else{
-                if(password_verify($password, $results['contrasenia'])){
+                if(password_verify($password, $results['contrasenia'])){                    
+                    $fk_usuario = $results['id_usuario']; 
+                    $rol = $results['fk_rol']; 
+
+                    if($rol == 2){
+                        $nivel = "gratuito";
+                        $_SESSION['nivel'] = $nivel; 
+                    }
+                    
+                    if($rol == 3){
+                        $nivel = "premium";
+                        $_SESSION['nivel'] = $nivel; 
+
+                        $query3 = mysqli_query($conexion, "SELECT MAX(fecha_pago) FROM facturas WHERE fk_usuario = '$fk_usuario' AND primera_cuota = 1");
+                        $result3 = mysqli_fetch_assoc($query3);
+                        $fecha_maxima = $result3['fecha_pago'];
+    
+                        $fecha_actual = date("Y-m-d");
+                        $fecha1 = new dateTime ($fecha_actual);
+                        $fecha2 = new dateTime ($fecha_maxima);
+                        //$fecha2 = new dateTime ("2022-11-05");
+    
+                        $diff = $fecha1->diff($fecha2);
+    
+                        $diferencia = $diff->days;
+    
+                        if($diff->days > 30){
+    
+                            $dias_disponibles = 0;
+    
+                            $actualizo_usuario = mysqli_query($conexion, "UPDATE usuarios SET fk_rol = 2, tema_oscuro = 0 WHERE id_usuario = '$fk_usuario'");
+    
+                            $actualizo_dias = mysqli_query($conexion, "UPDATE dias SET dias_disponibles='$dias_disponibles' WHERE fk_usuario = '$fk_usuario'");
+                            //header('Location:..//app_modulo_usuario/menu/index.php');
+                        }                    
+                    }    
+
+                    $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE nombre = '$nombre'");
+                    $results = mysqli_fetch_assoc($query);
                     $_SESSION['rol'] = $results['fk_rol'];
                     $_SESSION['idUsuario'] = $results['id_usuario'];
                     $_SESSION['email'] = $results['email'];
                     $_SESSION['tema_oscuro'] = $results['tema_oscuro'];
                     $_SESSION['login'] = $results['nombre'];
                     $_SESSION['idSesion'] = session_create_id();
+                    $_SESSION['diferencia_fechas'] = $diferencia;
                     header('Location: ../');
                 }
                 else {
-                    $message = 'Ha ingresado mal la contraseña.';
+                    $message = 'Ha ingresado mal la contraseña.';                    
                 }
             }
         }
@@ -38,7 +76,7 @@
             $message = 'Todos los campos son requeridos.';
         }
 
-    }
+    }    
     
 ?>
 <!DOCTYPE html>
@@ -73,6 +111,9 @@
                 <h1 class="login-izq-titulo">Bienvenido a <br> Kindlen't</h1>
                 <?php if(!empty($message)): ?>
                     <p> <?= $message ?></p>
+                <?php endif; ?>
+                <?php if(!empty($message2)): ?>
+                    <p> <?= $message2 ?></p>
                 <?php endif; ?>
                 <div class="login-izq-img">
                     <img src="../assets/login-img.svg" alt="">

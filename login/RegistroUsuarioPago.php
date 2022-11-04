@@ -6,6 +6,7 @@
     session_start();
 
     $message = '';
+    $message2 = '';
 
     if(isset($_POST["registro-boton"])){
         
@@ -13,7 +14,7 @@
             $nombre = $_POST['nombre'];
             $password = $_POST['password'];
             $email = $_POST['email'];
-            $password_hash = password_hash($password, PASSWORD_BCRYPT);            
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);    
 
             $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email'");
 
@@ -22,10 +23,23 @@
             }
 
             if(mysqli_num_rows($query) == 0){
-                $result = mysqli_query($conexion, "INSERT INTO usuarios (nombre, email, contrasenia, fk_rol, tema_oscuro) VALUES ('$nombre', '$email', '$password_hash', 3, 1)");
+                
+                $fechaPrimerPago = date("Y-m-d");
 
+                $result = mysqli_query($conexion, "INSERT INTO usuarios (nombre, email, contrasenia, fk_rol, tema_oscuro) VALUES ('$nombre', '$email', '$password_hash', 3, 1)");
+                
                 if($result){
                     $message = 'Nuevo usuario creado con exito';
+
+                    $query2 = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email'");
+                    $results = mysqli_fetch_assoc($query2);
+                    $fk_usuario = $results ['id_usuario'];
+
+                    $pago = mysqli_query($conexion, "INSERT INTO facturas (fecha_pago, importe, fk_usuario, primera_cuota) VALUES ('$fechaPrimerPago', 10, '$fk_usuario', 1)");
+                    
+                    $agrego_dias = mysqli_query($conexion, "INSERT INTO dias (fk_usuario, dias_disponibles) VALUES ('$fk_usuario', 30)");
+                
+                    //$dias_disponibles = mysqli_query($conexion, "INSERT INTO dias (fk_usuario, dias_disponibles) VALUES ('$fechaPrimerPago', 10, '$fk_usuario', 30, 1)");    
                 }
                 else{
                     $message = 'Ocurrió un error, no se ha podido crear el usuario.';

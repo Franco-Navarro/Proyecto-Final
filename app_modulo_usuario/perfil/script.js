@@ -39,15 +39,6 @@ document.getElementById("seccion-comentario-volver").addEventListener("click", (
     $comentario.classList.add("none");
 })
 
-document.getElementById("cambiar-suscripcion").addEventListener("click", (e) => {
-    e.preventDefault();
-    $botonVolver.classList.remove("none");
-    $comentario.classList.add("none");
-    $seccionSuscripcion.classList.remove("none");
-    $seccionTarjeta.classList.add("none");
-    $perfil.classList.add("none");
-})
-
 $botonVolver.onclick = (e) => {
     e.preventDefault();
     $botonVolver.classList.add("none");
