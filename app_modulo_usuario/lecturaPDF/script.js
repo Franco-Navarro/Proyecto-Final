@@ -6,9 +6,6 @@ let titulo = window.location.hash.substring(1),
 
   buscarLeyendo(titulo.replace(/_/g, " "));
 
-
-
-
 // CARGA LA PAGINA INDICADA AL CARGAR LA WEB 
 (() => {
   window.scrollTo(0, 0);
@@ -26,7 +23,7 @@ document.getElementById("paginaSiguiente").addEventListener("click", () => {
     document.getElementById("paginaActual").value = paginaActual() + 1;
     cambiarPagina(paginaActual(), zoomActual(), tipoActual);
   }
-
+  updateLeyendo(titulo.replace(/_/g, " "))
 })
 
 // VUELVE A LA PAGINA ANTERIOR
@@ -40,11 +37,13 @@ document.getElementById("paginaAnterior").addEventListener("click", () => {
     document.getElementById("paginaActual").value = paginaActual() - 1;
     cambiarPagina(paginaActual(), zoomActual(), tipoActual);
   }
+  updateLeyendo(titulo.replace(/_/g, " "))
 })
 
 // CARGA LA PAGINA INDICADA EN EL INPUT NUMBER
 document.getElementById("paginaInput").addEventListener("click", () => {
   cambiarPagina(paginaActual(), zoomActual(), tipoActual);
+  updateLeyendo(titulo.replace(/_/g, " "))
 })
 
 // DISMINUYE EL ZOOM
@@ -102,14 +101,14 @@ function cambiarPagina(paginaNumero, zoom, tipoDos) {
 
 // TOMA LA PAGINA QUE ESTA INDICADA EN EL INPUT
 function paginaActual() {
-  const inputPaginaActual = document.getElementById("paginaActual").value;
+  let inputPaginaActual = document.getElementById("paginaActual").value;
   return parseInt(inputPaginaActual);
 }
 
 // TOMA EL ZOOM INDICADO EN EL INPUT Y LO DIVIDE POR 100 PARA USARLO EN LA FUNCION cambiarPagina()
 function zoomActual() {
-  const zoomInputActual = document.getElementById("zoomActual").value;
-  let zoom = zoomInputActual.replace("%", "");
+  let zoomInputActual = document.getElementById("zoomActual").value,
+  zoom = zoomInputActual.replace("%", "");
   return (zoom / 100);
 }
 
@@ -123,13 +122,14 @@ function buscarLeyendo(titulo) {
       body: data
   })
   .then(res => res.json())
-  .then(json => { console.log(json)
+  .then(json => {
     if(json[0]["pagina_actual"] == "undefined") {
         agregarLeyendo(titulo);
       }
     else {
       let inputPaginaActual = document.getElementById("paginaActual");
-      inputPaginaActual = json[0]["pagina_actual"];
+      inputPaginaActual.value = json[0]["pagina_actual"];
+      cambiarPagina(paginaActual(), zoomActual(), tipoActual);
     }
   })
   .catch(err => console.error(err))
@@ -146,8 +146,17 @@ function agregarLeyendo(titulo) {
   .catch(err => console.error(err))
 }
 
-function actualizarPagina() {
-  
+function updateLeyendo(titulo) {
+  let data = new FormData(),
+  inputPaginaActual = document.getElementById("paginaActual");
+  data.append("titulo", titulo);
+  data.append("pagina_actual", inputPaginaActual.value);
+
+  fetch("../../scriptsPHP/updateLeyendo.php", {
+      method: 'POST',
+      body: data
+  })
+  .catch(err => console.error(err))
 }
 
 

@@ -1,5 +1,5 @@
 .main {
-   padding: 64px 0 0 64px;
+   padding: 64px;
 }
 
 .formABM-seccion {
@@ -360,10 +360,6 @@
 
    .header-logo {
       display: inline;
-   }
-
-   .main {
-      padding: 64px 0 64px 0;
    }
 
    .formABM {
