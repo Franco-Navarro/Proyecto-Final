@@ -17,6 +17,11 @@
             $actualizo_usuario = mysqli_query($conexion, "UPDATE usuarios SET fk_rol = 2, tema_oscuro = 0 WHERE id_usuario = '$id_usuario'");
 
             $actualizo_dias = mysqli_query($conexion, "UPDATE dias SET dias_disponibles = 0 WHERE fk_usuario = '$id_usuario'");
+
+            echo'<script type="text/javascript">
+                    alert("Su cuenta es una cuenta gratuita ahora.");
+                    window.location.href="../../login/InicioSesion.php";
+                </script>';
             
             $mensaje = 'Usted ahora tiene una cuenta gratuita';
         }

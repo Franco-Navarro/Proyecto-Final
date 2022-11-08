@@ -16,11 +16,21 @@
 
             $actualizo_usuario = mysqli_query($conexion, "UPDATE usuarios SET fk_rol = 3, tema_oscuro = 1 WHERE id_usuario = '$id_usuario'");
             
-            $pago = mysqli_query($conexion, "INSERT INTO facturas (fecha_pago, importe, fk_usuario, primera_cuota) VALUES ('$fechaPrimerPago', 10, '$id_usuario', 1)");
-                    
-            $actualizo_dias = mysqli_query($conexion, "UPDATE dias SET dias_disponibles='$dias_disponibles' WHERE fk_usuario = '$id_usuario'");
+            $pago = mysqli_query($conexion, "INSERT INTO facturas (fecha_pago, importe, fk_usuario, primera_cuota) VALUES ('$fechaPrimerPago', 500, '$id_usuario', 1)");
 
-            $mensaje = 'Usted ahora es premium';
+            $query = mysqli_query($conexion, "SELECT * FROM dias WHERE fk_usuario = '$id_usuario'");
+
+            if(!$query){
+                $pago = mysqli_query($conexion, "INSERT INTO dias (fk_usuario, dias_disponibles) VALUES ('$id_usuario', 30)");
+            }
+            else{
+                $actualizo_dias = mysqli_query($conexion, "UPDATE dias SET dias_disponibles='$dias_disponibles' WHERE fk_usuario = '$id_usuario'");
+            }            
+
+            echo'<script type="text/javascript">
+                    alert("Usted ahora es premium");
+                    window.location.href="../../login/InicioSesion.php";
+                </script>';
         }
     }
 ?>
@@ -110,10 +120,10 @@
                         <div class="tipo-suscripcion-button">
                             <!-- <button id="suscripcion-premium">Suscribirse</button> -->
                             <input type="submit" value="Registro premium" name="suscripcion-premium" id="suscripcion-premium"></button>
-                        </div>
+                        </div>                        
                     </form>
                 </div>                
-                <a href="index.php" >Volver</a>
+                <a href="index.php" >Volver</a>                
                 <a href="../../login/InicioSesion.php" >Inciar sesión</a>
             </div>
         </section>

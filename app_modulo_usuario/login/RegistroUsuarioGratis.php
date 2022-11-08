@@ -1,46 +1,51 @@
 <?php
 
-    include("../../scriptsPHP/manejoSesion.inc");
-    require '../../scriptsPHP/conexion.inc';
+    /* require '../scriptsPHP/database.php'; */
+    require '../scriptsPHP/conexion.inc';
 
-    $email = $_SESSION['email'];
+    session_start();
 
-    $mensaje = '';
+    $message = '';
 
-    if(isset($_POST["pagar-boton"])){
-        $fechaPago = date("Y-m-d");
-        $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email'");
-        if(!$query){
-            $mensaje = "No se encontró un usuario con ese mail asociado.";
-        }
-        else{
-            $results = mysqli_fetch_assoc($query);
-            $fk_usuario = $results ['id_usuario'];
+    if(isset($_POST["registro-boton"])){
+        
+        if(!empty($_POST['nombre']) && !empty($_POST['password']) && !empty($_POST['email'])){
+            $nombre = $_POST['nombre'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);            
 
-            //Agregado por Cristian
+            $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email = '$email'");
 
-            if($_SESSION['rol'] == 2){
-                $mensaje = "Usted tiene una cuenta gratuita, no puede cargar días. Cambie su suscripción a cuenta premium primero.";
+            if(mysqli_num_rows($query) > 0){
+                $message = 'Usuario ya registrado';
             }
-            else{
-                $query2 = mysqli_query($conexion, "SELECT dias_disponibles FROM dias WHERE fk_usuario = '$fk_usuario'");
-                $result2 = mysqli_fetch_assoc($query2);
-                $dias_disponibles = $result2['dias_disponibles'] + 30;
-        
-                $pago = mysqli_query($conexion, "INSERT INTO facturas (fecha_pago, importe, fk_usuario, primera_cuota) VALUES ('$fechaPago', 500, '$fk_usuario', 0)");
-    
-                $actualizo_dias = mysqli_query($conexion, "UPDATE dias SET dias_disponibles='$dias_disponibles' WHERE fk_usuario = '$fk_usuario'");
-        
-                if($pago){
-                    $mensaje = "Pago realizado con éxito.";
+
+   
+            if(mysqli_num_rows($query) == 0){
+
+                $result = mysqli_query($conexion, "INSERT INTO usuarios (nombre, email, contrasenia, fk_rol, tema_oscuro) VALUES ('$nombre', '$email', '$password_hash', 2, 0)");
+
+
+                if($result){
+                    $message = 'Nuevo usuario creado con exito';
                 }
                 else{
-                    $mensaje = "Pago fallido.";
+                    $message = 'Ocurrió un error, no se ha podido crear el usuario.';
                 }
-            }            
+            }
+            else{
+                    $message = "Ya existe un usuario registrado con ese email. Por favor pruebe con otro.";
+            }    
+        }
+        else{
+            $message = "Los campos deben estar completos!";
         }
     }
+
 ?>
+
+<?php if (!empty($message)) {echo "<p class=\"error\">" . "Mensaje: ". $message . "</p>";} ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -64,39 +69,43 @@
         <div class="header-logo">
             <a href="InicioSesion.php"><img src="../assets/logo.svg" alt=""></a>
         </div>
-    </header> 
-
+    </header>    
 <!--SECCION DE REGISTRO-->
-    <section class="login-seccion" id="seccion-pago">
+    <section class="login-seccion" id="seccion-login">
         <article class="registro-contenido">
             <div class="registro-contenido-izq">
-                <h3 class="registro-izq-titulo">Cuota de la suscripción: $500</h3>
-                <form id="form-pago" action="pago.php" class="contacto-form" method="POST">
-                    <div class="registro-form-input">
-                        <label for="númeroTarjeta"></label>
-                        <br>
-                        <br>                        
-                        <label for="númeroTarjeta">Tarjeta de Crédito</label>
-                        <input type="int" name="númeroTarjeta" id="númeroTarjeta" required minlength="16" maxlength="16" pattern="[0-9]+">
-                    </div>
-                    <div class="registro-form-input">
-                        <label for="seguridadTarjeta">Número de seguridad de tarjeta de Crédito</label>
-                        <input type="int" name="seguridadTarjeta" id="seguridadTarjeta" required minlength="3" maxlength="3" pattern="[0-9]+">
+                <h3 class="registro-izq-titulo">Registrarse</h3>                                
+                <form id="form-registro" action="RegistroUsuarioGratis.php" class="registro-izq-form" method="POST">
+                    <div>
+                        <div class="registro-form-input">
+                            <label for="nombre">Nombre de Usuario</label>
+                            <input type="text" name="nombre" id="nombre" required minlength="5" maxlength="40" pattern="[A-Za-z0-9]+" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 40">
+                        </div>
+                        <div class="registro-form-input">
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="password" required minlength="8" maxlength="32" title="Tamaño mínimo: 8. Tamaño máximo: 32">
+                        </div>
+                        <div class="registro-form-input">
+                            <label for="email">Correo Electronico</label>
+                            <input type="email" name="email" id="email" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
+                        </div>
                     </div>
                     <div class="login-form-buttons">
                         <div class="login-form-button">
-                            <input type="submit" value="Pagar" name="pagar-boton" id="pagar-boton"></button>
+                            <input type="submit" value="Registro" name="registro-boton" id="registro-boton"></button>
                         </div>
                     </div>
-                    <div class="registro-izq-enlaces" id="volver-login">
-                    <a href="index.php" >Volver</a>
-                </div>
                 </form>
+                <div class="registro-izq-enlaces" id="volver-login">
+                    <a href="InicioSesion.php" >Iniciar Sesion</a>
+                    <a href="Registro.php" >Volver</a>
+                </div>
             </div>
             <div class="registro-contenido-der">
                 <h1 class="registro-der-titulo">Comienza en <br> Kindlen't</h1>
-                <?php if(!empty($mensaje)): ?>
-                    <p> <?= $mensaje ?></p>
+                <?php if(!empty($message)): ?>
+                    <p> <?= $message ?></p>
+                    <?php $message = ''; ?>
                 <?php endif; ?>
                 <div class="registro-der-img">
                     <img src="../assets/registro-img.svg" alt="">
